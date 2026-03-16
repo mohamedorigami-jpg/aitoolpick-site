@@ -1,159 +1,328 @@
 <!DOCTYPE html>
 <html lang="en-GB">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI Tool Pick - Best AI Tools for UK Small Businesses</title>
-    <meta name="description" content="Discover the best AI tools for UK small businesses. In-depth reviews, comparisons, and affiliate links to help you boost productivity and grow your business.">
-    <meta name="keywords" content="AI tools, UK small businesses, AI reviews, productivity tools, business automation">
-    <meta name="author" content="AI Tool Pick">
-    <meta name="robots" content="index, follow">
-    <link rel="canonical" href="https://aitoolpick.co.uk/">
-    
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://aitoolpick.co.uk/">
-    <meta property="og:title" content="AI Tool Pick - Best AI Tools for UK Small Businesses">
-    <meta property="og:description" content="Discover the best AI tools for UK small businesses. In-depth reviews, comparisons, and affiliate links to help you boost productivity and grow your business.">
-    <meta property="og:image" content="https://aitoolpick.co.uk/images/og-image.jpg">
-    
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://aitoolpick.co.uk/">
-    <meta property="twitter:title" content="AI Tool Pick - Best AI Tools for UK Small Businesses">
-    <meta property="twitter:description" content="Discover the best AI tools for UK small businesses. In-depth reviews, comparisons, and affiliate links to help you boost productivity and grow your business.">
-    <meta property="twitter:image" content="https://aitoolpick.co.uk/images/og-image.jpg">
-    
-    <!-- Schema.org markup -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "Organization",
-        "name": "AI Tool Pick",
-        "url": "https://aitoolpick.co.uk",
-        "logo": "https://aitoolpick.co.uk/images/logo.png",
-        "description": "A blog reviewing AI tools for UK small businesses",
-        "sameAs": [
-            "https://twitter.com/aitoolpick",
-            "https://linkedin.com/company/aitoolpick"
-        ]
-    }
-    </script>
-    
-    <link rel="stylesheet" href="styles.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Tool Pick — Best AI Tools for UK Small Businesses</title>
+<meta name="description" content="Independent AI tool reviews for UK small businesses. Find the right AI software, compare pricing, and save time with honest recommendations.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#0f0f0f;--paper:#fafaf7;--cream:#f4f0e8;--accent:#d4500a;--accent2:#1a6b3a;--muted:#6b6b6b;--border:#e2ddd4;--surface:#ffffff}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--paper);color:var(--ink);font-family:'DM Sans',sans-serif;font-weight:400;line-height:1.6;-webkit-font-smoothing:antialiased}
+nav{position:sticky;top:0;z-index:100;background:rgba(250,250,247,0.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);padding:0 clamp(16px,4vw,48px)}
+.nav-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:58px}
+.logo{font-family:'Playfair Display',serif;font-size:18px;font-weight:700;color:var(--ink);text-decoration:none;letter-spacing:-0.3px}
+.logo span{color:var(--accent)}
+.nav-links{display:flex;align-items:center;gap:28px;list-style:none}
+.nav-links a{font-size:13px;font-weight:500;color:var(--muted);text-decoration:none;letter-spacing:.02em;transition:color .15s}
+.nav-links a:hover{color:var(--ink)}
+.nav-cta{background:var(--ink)!important;color:var(--paper)!important;padding:7px 16px;border-radius:6px;font-size:12px!important}
+.nav-cta:hover{background:var(--accent)!important}
+.hero{max-width:1200px;margin:0 auto;padding:clamp(48px,8vw,96px) clamp(16px,4vw,48px) clamp(32px,5vw,64px);display:grid;grid-template-columns:1fr 340px;gap:48px;align-items:start}
+.hero-eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);margin-bottom:20px}
+.hero-eyebrow::before{content:'';display:block;width:20px;height:1px;background:var(--accent)}
+h1{font-family:'Playfair Display',serif;font-size:clamp(36px,5vw,60px);font-weight:900;line-height:1.05;letter-spacing:-1.5px;color:var(--ink);margin-bottom:24px}
+h1 em{font-style:italic;color:var(--accent)}
+.hero-desc{font-size:17px;color:var(--muted);max-width:480px;line-height:1.7;margin-bottom:32px;font-weight:300}
+.hero-actions{display:flex;align-items:center;gap:16px;flex-wrap:wrap}
+.btn-primary{display:inline-flex;align-items:center;gap:8px;background:var(--ink);color:var(--paper);text-decoration:none;font-size:13px;font-weight:600;padding:12px 24px;border-radius:8px;letter-spacing:.01em;transition:all .2s}
+.btn-primary:hover{background:var(--accent);transform:translateY(-1px)}
+.btn-secondary{display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:500;color:var(--muted);text-decoration:none;border-bottom:1px solid var(--border);padding-bottom:2px;transition:color .15s}
+.btn-secondary:hover{color:var(--ink)}
+.hero-stats{display:flex;flex-direction:column;gap:20px;padding:28px;background:var(--surface);border:1px solid var(--border);border-radius:12px;box-shadow:0 2px 12px rgba(0,0,0,.04)}
+.stat-item{border-bottom:1px solid var(--border);padding-bottom:16px}
+.stat-item:last-child{border-bottom:none;padding-bottom:0}
+.stat-number{font-family:'Playfair Display',serif;font-size:32px;font-weight:700;color:var(--ink);line-height:1;margin-bottom:4px}
+.stat-label{font-size:12px;color:var(--muted)}
+.stat-badge{display:inline-flex;align-items:center;gap:4px;font-size:10px;font-weight:600;color:var(--accent2);background:rgba(26,107,58,.08);padding:2px 7px;border-radius:20px;margin-top:6px}
+.section-divider{max-width:1200px;margin:0 auto;padding:0 clamp(16px,4vw,48px);border-top:1px solid var(--border)}
+.featured-section{max-width:1200px;margin:0 auto;padding:clamp(40px,6vw,72px) clamp(16px,4vw,48px)}
+.section-header{display:flex;align-items:baseline;justify-content:space-between;margin-bottom:32px}
+.section-label{font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.section-title{font-family:'Playfair Display',serif;font-size:clamp(22px,3vw,30px);font-weight:700;letter-spacing:-.5px;color:var(--ink);margin-top:6px}
+.view-all{font-size:12px;font-weight:500;color:var(--muted);text-decoration:none;border-bottom:1px solid var(--border);padding-bottom:1px;transition:color .15s}
+.view-all:hover{color:var(--accent);border-color:var(--accent)}
+.tools-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.tool-card{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:24px;text-decoration:none;color:inherit;display:flex;flex-direction:column;transition:all .2s;position:relative;overflow:hidden}
+.tool-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--accent),var(--accent2));opacity:0;transition:opacity .2s}
+.tool-card:hover{border-color:#c8c2b6;box-shadow:0 8px 32px rgba(0,0,0,.08);transform:translateY(-2px)}
+.tool-card:hover::before{opacity:1}
+.tool-card-top{display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:14px}
+.tool-icon{width:40px;height:40px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:20px;background:var(--cream)}
+.tool-rating{display:flex;align-items:center;gap:4px;font-size:12px;font-weight:600;color:var(--ink);font-family:'DM Mono',monospace}
+.stars{color:#f59e0b;font-size:10px;letter-spacing:-1px}
+.tool-name{font-size:16px;font-weight:600;color:var(--ink);margin-bottom:4px;letter-spacing:-.2px}
+.tool-tagline{font-size:13px;color:var(--muted);line-height:1.5;margin-bottom:16px;flex:1;font-weight:300}
+.tool-footer{display:flex;align-items:center;justify-content:space-between;padding-top:14px;border-top:1px solid var(--border)}
+.tool-category{font-size:10px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);background:rgba(212,80,10,.08);padding:3px 8px;border-radius:4px}
+.tool-price{font-size:12px;color:var(--muted);font-family:'DM Mono',monospace}
+.featured-review{max-width:1200px;margin:0 auto;padding:0 clamp(16px,4vw,48px) clamp(40px,6vw,72px)}
+.review-card{background:var(--ink);color:var(--paper);border-radius:16px;padding:clamp(32px,5vw,56px);display:grid;grid-template-columns:1fr 280px;gap:48px;align-items:center;position:relative;overflow:hidden}
+.review-card::after{content:'"';position:absolute;right:320px;top:-20px;font-family:'Playfair Display',serif;font-size:240px;color:rgba(255,255,255,.04);line-height:1;pointer-events:none}
+.review-label{font-size:10px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);margin-bottom:16px;display:flex;align-items:center;gap:8px}
+.review-label::before{content:'';display:block;width:16px;height:1px;background:var(--accent)}
+.review-title{font-family:'Playfair Display',serif;font-size:clamp(24px,3.5vw,38px);font-weight:700;line-height:1.15;letter-spacing:-.8px;color:var(--paper);margin-bottom:16px}
+.review-excerpt{font-size:15px;color:rgba(250,250,247,.65);line-height:1.7;font-weight:300;margin-bottom:28px}
+.verdict-score{font-family:'Playfair Display',serif;font-size:72px;font-weight:900;color:var(--paper);line-height:1;letter-spacing:-3px}
+.verdict-label{font-size:11px;font-weight:500;color:rgba(250,250,247,.5);letter-spacing:.05em;margin-top:-8px;margin-bottom:16px}
+.verdict-row{display:flex;align-items:center;gap:10px;font-size:11px;color:rgba(250,250,247,.6);margin-bottom:8px}
+.verdict-track{flex:1;height:3px;background:rgba(255,255,255,.1);border-radius:2px;overflow:hidden}
+.verdict-fill{height:100%;background:var(--accent);border-radius:2px}
+.categories-section{background:var(--cream);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+.categories-inner{max-width:1200px;margin:0 auto;padding:clamp(40px,6vw,72px) clamp(16px,4vw,48px)}
+.categories-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:32px}
+.category-card{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:20px;text-decoration:none;color:inherit;transition:all .2s;display:flex;flex-direction:column;gap:10px}
+.category-card:hover{border-color:var(--accent);box-shadow:0 4px 16px rgba(212,80,10,.08)}
+.category-emoji{font-size:24px}
+.category-name{font-size:14px;font-weight:600;color:var(--ink);letter-spacing:-.2px}
+.category-count{font-size:11px;color:var(--muted);font-family:'DM Mono',monospace}
+.articles-section{max-width:1200px;margin:0 auto;padding:clamp(40px,6vw,72px) clamp(16px,4vw,48px)}
+.article-row{display:grid;grid-template-columns:80px 1fr auto;align-items:center;gap:20px;padding:20px 0;border-bottom:1px solid var(--border);text-decoration:none;color:inherit;transition:background .15s}
+.article-row:first-child{border-top:1px solid var(--border)}
+.article-row:hover .article-title{color:var(--accent)}
+.article-num{font-family:'Playfair Display',serif;font-size:28px;font-weight:700;color:var(--border);text-align:right;line-height:1}
+.article-title{font-size:16px;font-weight:500;color:var(--ink);letter-spacing:-.2px;transition:color .15s;margin-bottom:4px}
+.article-meta{font-size:12px;color:var(--muted);display:flex;align-items:center;gap:12px}
+.article-tag{font-size:10px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--accent)}
+.article-arrow{font-size:18px;color:var(--border);transition:all .15s}
+.article-row:hover .article-arrow{color:var(--accent);transform:translateX(4px)}
+.newsletter-section{background:var(--ink);padding:clamp(48px,8vw,96px) clamp(16px,4vw,48px);text-align:center}
+.newsletter-inner{max-width:520px;margin:0 auto}
+.newsletter-label{font-size:10px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);margin-bottom:16px}
+.newsletter-title{font-family:'Playfair Display',serif;font-size:clamp(28px,4vw,40px);font-weight:700;color:var(--paper);letter-spacing:-.8px;line-height:1.15;margin-bottom:12px}
+.newsletter-desc{font-size:15px;color:rgba(250,250,247,.55);margin-bottom:28px;font-weight:300}
+.newsletter-form{display:flex;gap:10px;max-width:420px;margin:0 auto}
+.newsletter-input{flex:1;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);border-radius:8px;color:var(--paper);font-family:'DM Sans',sans-serif;font-size:13px;padding:11px 16px;outline:none}
+.newsletter-input::placeholder{color:rgba(250,250,247,.35)}
+.newsletter-btn{background:var(--accent);color:var(--paper);border:none;border-radius:8px;font-family:'DM Sans',sans-serif;font-size:13px;font-weight:600;padding:11px 20px;cursor:pointer;white-space:nowrap}
+.newsletter-note{font-size:11px;color:rgba(250,250,247,.3);margin-top:12px}
+footer{background:var(--paper);border-top:1px solid var(--border);padding:clamp(32px,5vw,56px) clamp(16px,4vw,48px) 24px}
+.footer-inner{max-width:1200px;margin:0 auto}
+.footer-top{display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:48px;margin-bottom:40px}
+.footer-brand p{font-size:13px;color:var(--muted);max-width:200px;font-weight:300;margin-top:8px}
+.footer-col h4{font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--ink);margin-bottom:14px}
+.footer-col ul{list-style:none;display:flex;flex-direction:column;gap:8px}
+.footer-col ul a{font-size:13px;color:var(--muted);text-decoration:none;transition:color .15s;font-weight:300}
+.footer-col ul a:hover{color:var(--ink)}
+.footer-bottom{border-top:1px solid var(--border);padding-top:20px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px}
+.footer-bottom p{font-size:12px;color:var(--muted)}
+.affiliate-note{font-size:11px;color:var(--muted);background:var(--cream);border:1px solid var(--border);border-radius:6px;padding:6px 12px}
+@keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+.hero-left>*{animation:fadeUp .6s ease both}
+.hero-left>*:nth-child(1){animation-delay:.05s}
+.hero-left>*:nth-child(2){animation-delay:.15s}
+.hero-left>*:nth-child(3){animation-delay:.25s}
+.hero-left>*:nth-child(4){animation-delay:.35s}
+@media(max-width:900px){.hero{grid-template-columns:1fr}.tools-grid{grid-template-columns:1fr 1fr}.review-card{grid-template-columns:1fr}.categories-grid{grid-template-columns:repeat(2,1fr)}.footer-top{grid-template-columns:1fr 1fr}}
+@media(max-width:600px){.nav-links{display:none}.tools-grid{grid-template-columns:1fr}.categories-grid{grid-template-columns:1fr 1fr}.newsletter-form{flex-direction:column}.footer-top{grid-template-columns:1fr}.article-row{grid-template-columns:48px 1fr}.article-arrow{display:none}}
+</style>
 </head>
 <body>
-    <header>
-        <nav>
-            <div class="container">
-                <div class="logo">
-                    <a href="index.html">AI Tool Pick</a>
-                </div>
-                <ul class="nav-links">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="blog.html">Blog</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </div>
-        </nav>
-    </header>
+<nav>
+  <div class="nav-inner">
+    <a href="/" class="logo">AI Tool<span>Pick</span></a>
+    <ul class="nav-links">
+      <li><a href="/blog.html">Reviews</a></li>
+      <li><a href="#categories">Categories</a></li>
+      <li><a href="#newsletter" class="nav-cta">Get updates</a></li>
+    </ul>
+  </div>
+</nav>
 
-    <main>
-        <section class="hero">
-            <div class="container">
-                <h1>Discover the Best AI Tools for Your UK Small Business</h1>
-                <p>In-depth reviews, honest comparisons, and affiliate links to help you choose the right AI tools to boost productivity and drive growth.</p>
-                <a href="blog.html" class="cta-button">Explore Our Reviews</a>
-            </div>
-        </section>
+<section>
+  <div class="hero">
+    <div class="hero-left">
+      <div class="hero-eyebrow">Independent AI Reviews for UK Business</div>
+      <h1>Find the right<br><em>AI tool</em><br>first time.</h1>
+      <p class="hero-desc">Honest, in-depth reviews of AI tools for UK small businesses. No hype, no paid placements — just clear recommendations that save you time and money.</p>
+      <div class="hero-actions">
+        <a href="/blog.html" class="btn-primary">Browse all reviews →</a>
+        <a href="#categories" class="btn-secondary">Browse by category</a>
+      </div>
+    </div>
+    <div class="hero-stats">
+      <div class="stat-item">
+        <div class="stat-number">42+</div>
+        <div class="stat-label">Tools reviewed</div>
+        <div class="stat-badge">↑ Growing weekly</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number">£0</div>
+        <div class="stat-label">Cost to read</div>
+        <div class="stat-badge">Always free</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number">UK</div>
+        <div class="stat-label">Focused pricing & VAT</div>
+        <div class="stat-badge">GBP only</div>
+      </div>
+    </div>
+  </div>
+</section>
 
-        <section class="featured-articles">
-            <div class="container">
-                <h2>Latest AI Tool Reviews</h2>
-                <div class="article-grid">
-                    <article class="article-card">
-                        <h3><a href="article-template.html">Top 5 AI Writing Assistants for Small Business Content Creation</a></h3>
-                        <p>Compare the best AI writing tools to streamline your content marketing efforts and save time.</p>
-                        <a href="article-template.html" class="read-more">Read Review</a>
-                    </article>
-                    <article class="article-card">
-                        <h3><a href="#">Best AI Chatbots for Customer Service in 2024</a></h3>
-                        <p>Find the perfect AI chatbot to handle customer inquiries and improve response times.</p>
-                        <a href="#" class="read-more">Read Review</a>
-                    </article>
-                    <article class="article-card">
-                        <h3><a href="#">AI-Powered Accounting Tools for UK SMEs</a></h3>
-                        <p>Automate your bookkeeping and financial reporting with these intelligent accounting solutions.</p>
-                        <a href="#" class="read-more">Read Review</a>
-                    </article>
-                </div>
-            </div>
-        </section>
+<div class="section-divider"></div>
 
-        <section class="affiliate-section">
-            <div class="container">
-                <h2>Recommended AI Tools</h2>
-                <p>These are our top picks for AI tools that can transform your small business. Click through our affiliate links to try them out.</p>
-                <div class="affiliate-links">
-                    <div class="affiliate-item">
-                        <h3>Tool Name 1</h3>
-                        <p>Brief description of the tool and its benefits.</p>
-                        <a href="#" class="affiliate-link" target="_blank" rel="nofollow">Get Started (Affiliate Link)</a>
-                    </div>
-                    <div class="affiliate-item">
-                        <h3>Tool Name 2</h3>
-                        <p>Brief description of the tool and its benefits.</p>
-                        <a href="#" class="affiliate-link" target="_blank" rel="nofollow">Get Started (Affiliate Link)</a>
-                    </div>
-                    <div class="affiliate-item">
-                        <h3>Tool Name 3</h3>
-                        <p>Brief description of the tool and its benefits.</p>
-                        <a href="#" class="affiliate-link" target="_blank" rel="nofollow">Get Started (Affiliate Link)</a>
-                    </div>
-                </div>
-            </div>
-        </section>
+<section class="featured-section">
+  <div class="section-header">
+    <div>
+      <div class="section-label">This week's picks</div>
+      <div class="section-title">Top AI tools for UK businesses</div>
+    </div>
+    <a href="/blog.html" class="view-all">View all reviews →</a>
+  </div>
+  <div class="tools-grid">
+    <a href="/2026-03-16-article.html" class="tool-card">
+      <div class="tool-card-top"><div class="tool-icon">✍️</div><div class="tool-rating"><span class="stars">★★★★★</span>4.5</div></div>
+      <div class="tool-name">Jasper AI</div>
+      <div class="tool-tagline">The leading AI writing assistant for teams creating content at scale. Built-in SEO tools and brand voice training.</div>
+      <div class="tool-footer"><span class="tool-category">Writing</span><span class="tool-price">From £32/mo</span></div>
+    </a>
+    <a href="/blog.html" class="tool-card">
+      <div class="tool-card-top"><div class="tool-icon">🤖</div><div class="tool-rating"><span class="stars">★★★★☆</span>4.2</div></div>
+      <div class="tool-name">ChatGPT</div>
+      <div class="tool-tagline">OpenAI's flagship model. Exceptional for drafting, analysis, and coding. The most versatile AI assistant available.</div>
+      <div class="tool-footer"><span class="tool-category">General AI</span><span class="tool-price">Free / £16/mo</span></div>
+    </a>
+    <a href="/blog.html" class="tool-card">
+      <div class="tool-card-top"><div class="tool-icon">📊</div><div class="tool-rating"><span class="stars">★★★★★</span>4.7</div></div>
+      <div class="tool-name">Notion AI</div>
+      <div class="tool-tagline">AI built into your workspace. Summarise docs, generate content, and manage projects — all in one place.</div>
+      <div class="tool-footer"><span class="tool-category">Productivity</span><span class="tool-price">From £8/mo</span></div>
+    </a>
+    <a href="/blog.html" class="tool-card">
+      <div class="tool-card-top"><div class="tool-icon">🎨</div><div class="tool-rating"><span class="stars">★★★★☆</span>4.1</div></div>
+      <div class="tool-name">Canva AI</div>
+      <div class="tool-tagline">Design anything with AI assistance. Magic Write, background removal, and image generation built in.</div>
+      <div class="tool-footer"><span class="tool-category">Design</span><span class="tool-price">Free / £10/mo</span></div>
+    </a>
+    <a href="/blog.html" class="tool-card">
+      <div class="tool-card-top"><div class="tool-icon">📧</div><div class="tool-rating"><span class="stars">★★★★☆</span>4.0</div></div>
+      <div class="tool-name">Instantly AI</div>
+      <div class="tool-tagline">Cold email at scale with AI personalisation. Ideal for UK service businesses doing outbound lead generation.</div>
+      <div class="tool-footer"><span class="tool-category">Sales</span><span class="tool-price">From £25/mo</span></div>
+    </a>
+    <a href="/blog.html" class="tool-card">
+      <div class="tool-card-top"><div class="tool-icon">🔍</div><div class="tool-rating"><span class="stars">★★★★★</span>4.6</div></div>
+      <div class="tool-name">Semrush AI</div>
+      <div class="tool-tagline">SEO research and content optimisation powered by AI. The go-to for UK businesses serious about organic traffic.</div>
+      <div class="tool-footer"><span class="tool-category">SEO</span><span class="tool-price">From £99/mo</span></div>
+    </a>
+  </div>
+</section>
 
-        <section id="about" class="about">
-            <div class="container">
-                <h2>About AI Tool Pick</h2>
-                <p>AI Tool Pick is dedicated to helping UK small businesses harness the power of artificial intelligence. We provide unbiased reviews, detailed comparisons, and practical guides to help you choose the right AI tools for your specific needs.</p>
-                <p>Our mission is to make AI accessible and understandable for small business owners, ensuring you can leverage these powerful technologies without the technical jargon or overwhelming options.</p>
-            </div>
-        </section>
-    </main>
+<section class="featured-review">
+  <div class="review-card">
+    <div>
+      <div class="review-label">Full review</div>
+      <div class="review-title">Jasper AI: Is it worth £32/month for UK small businesses?</div>
+      <div class="review-excerpt">We tested Jasper AI across 30 days of real content creation for a UK e-commerce brand. Here's what we found — the good, the bad, and whether the price is justified.</div>
+      <a href="/2026-03-16-article.html" class="btn-primary" style="font-size:12px;padding:9px 18px;">Read full review →</a>
+    </div>
+    <div>
+      <div class="verdict-score">4.5</div>
+      <div class="verdict-label">Overall score / 5</div>
+      <div class="verdict-row"><span style="width:80px;flex-shrink:0">Value</span><div class="verdict-track"><div class="verdict-fill" style="width:72%"></div></div><span>3.6</span></div>
+      <div class="verdict-row"><span style="width:80px;flex-shrink:0">Quality</span><div class="verdict-track"><div class="verdict-fill" style="width:90%"></div></div><span>4.5</span></div>
+      <div class="verdict-row"><span style="width:80px;flex-shrink:0">Ease of use</span><div class="verdict-track"><div class="verdict-fill" style="width:88%"></div></div><span>4.4</span></div>
+      <div class="verdict-row"><span style="width:80px;flex-shrink:0">UK support</span><div class="verdict-track"><div class="verdict-fill" style="width:80%"></div></div><span>4.0</span></div>
+    </div>
+  </div>
+</section>
 
-    <footer>
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h3>AI Tool Pick</h3>
-                    <p>Your guide to the best AI tools for UK small businesses.</p>
-                </div>
-                <div class="footer-section">
-                    <h3>Quick Links</h3>
-                    <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="blog.html">Blog</a></li>
-                        <li><a href="#about">About</a></li>
-                        <li><a href="#contact">Contact</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h3>Categories</h3>
-                    <ul>
-                        <li><a href="#">Writing & Content</a></li>
-                        <li><a href="#">Customer Service</a></li>
-                        <li><a href="#">Accounting</a></li>
-                        <li><a href="#">Marketing</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2024 AI Tool Pick. All rights reserved. | <a href="#" rel="nofollow">Privacy Policy</a> | <a href="#" rel="nofollow">Terms of Service</a></p>
-            </div>
-        </div>
-    </footer>
+<section class="categories-section" id="categories">
+  <div class="categories-inner">
+    <div>
+      <div class="section-label">Browse by use case</div>
+      <div class="section-title">What do you need AI for?</div>
+    </div>
+    <div class="categories-grid">
+      <a href="/blog.html" class="category-card"><div class="category-emoji">✍️</div><div class="category-name">Writing & Content</div><div class="category-count">12 tools reviewed</div></a>
+      <a href="/blog.html" class="category-card"><div class="category-emoji">📊</div><div class="category-name">Productivity</div><div class="category-count">8 tools reviewed</div></a>
+      <a href="/blog.html" class="category-card"><div class="category-emoji">🎨</div><div class="category-name">Design & Creative</div><div class="category-count">7 tools reviewed</div></a>
+      <a href="/blog.html" class="category-card"><div class="category-emoji">📧</div><div class="category-name">Sales & Outreach</div><div class="category-count">6 tools reviewed</div></a>
+      <a href="/blog.html" class="category-card"><div class="category-emoji">🔍</div><div class="category-name">SEO & Marketing</div><div class="category-count">5 tools reviewed</div></a>
+      <a href="/blog.html" class="category-card"><div class="category-emoji">💰</div><div class="category-name">Finance & Banking</div><div class="category-count">4 tools reviewed</div></a>
+      <a href="/blog.html" class="category-card"><div class="category-emoji">🤝</div><div class="category-name">Customer Service</div><div class="category-count">4 tools reviewed</div></a>
+      <a href="/blog.html" class="category-card"><div class="category-emoji">💻</div><div class="category-name">Development</div><div class="category-count">6 tools reviewed</div></a>
+    </div>
+  </div>
+</section>
+
+<section class="articles-section">
+  <div class="section-header">
+    <div><div class="section-label">Latest</div><div class="section-title">Fresh from the site</div></div>
+    <a href="/blog.html" class="view-all">See all →</a>
+  </div>
+  <div>
+    <a href="/2026-03-16-article.html" class="article-row">
+      <div class="article-num">01</div>
+      <div><div class="article-title">Jasper AI Review 2026: The Ultimate AI Writing Assistant for UK Small Businesses</div><div class="article-meta"><span class="article-tag">Writing</span><span>16 Mar 2026</span><span>8 min read</span></div></div>
+      <div class="article-arrow">→</div>
+    </a>
+    <a href="/blog.html" class="article-row">
+      <div class="article-num">02</div>
+      <div><div class="article-title">Best AI Tools for UK Accountants: Save Hours on Bookkeeping</div><div class="article-meta"><span class="article-tag">Finance</span><span>Coming soon</span></div></div>
+      <div class="article-arrow">→</div>
+    </a>
+    <a href="/blog.html" class="article-row">
+      <div class="article-num">03</div>
+      <div><div class="article-title">ChatGPT vs Claude: Which AI Assistant is Better for UK Businesses?</div><div class="article-meta"><span class="article-tag">General AI</span><span>Coming soon</span></div></div>
+      <div class="article-arrow">→</div>
+    </a>
+    <a href="/blog.html" class="article-row">
+      <div class="article-num">04</div>
+      <div><div class="article-title">Monzo Business vs Starling Bank: Which Is Best for Small Business in 2026?</div><div class="article-meta"><span class="article-tag">Finance</span><span>Coming soon</span></div></div>
+      <div class="article-arrow">→</div>
+    </a>
+    <a href="/blog.html" class="article-row">
+      <div class="article-num">05</div>
+      <div><div class="article-title">5 AI SEO Tools Worth Paying For in 2026 (UK Business Guide)</div><div class="article-meta"><span class="article-tag">SEO</span><span>Coming soon</span></div></div>
+      <div class="article-arrow">→</div>
+    </a>
+  </div>
+</section>
+
+<section class="newsletter-section" id="newsletter">
+  <div class="newsletter-inner">
+    <div class="newsletter-label">Stay informed</div>
+    <div class="newsletter-title">Weekly AI tool picks for UK businesses</div>
+    <div class="newsletter-desc">One email a week. The best new AI tools, honest reviews, and money-saving tips — curated for UK small businesses.</div>
+    <form class="newsletter-form" onsubmit="return false;">
+      <input type="email" class="newsletter-input" placeholder="your@email.co.uk">
+      <button class="newsletter-btn">Subscribe</button>
+    </form>
+    <div class="newsletter-note">No spam. Unsubscribe any time.</div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a href="/" class="logo">AI Tool<span>Pick</span></a>
+        <p>Independent AI tool reviews for UK small businesses.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Reviews</h4>
+        <ul><li><a href="/blog.html">All reviews</a></li><li><a href="/blog.html">Writing tools</a></li><li><a href="/blog.html">Productivity</a></li><li><a href="/blog.html">SEO tools</a></li></ul>
+      </div>
+      <div class="footer-col">
+        <h4>Categories</h4>
+        <ul><li><a href="/blog.html">Finance & Banking</a></li><li><a href="/blog.html">Sales & Outreach</a></li><li><a href="/blog.html">Design</a></li><li><a href="/blog.html">Development</a></li></ul>
+      </div>
+      <div class="footer-col">
+        <h4>Site</h4>
+        <ul><li><a href="#">About</a></li><li><a href="#">Disclosure</a></li><li><a href="#">Contact</a></li></ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 AI Tool Pick. All rights reserved.</p>
+      <div class="affiliate-note">⚠️ Some links are affiliate links. We earn a commission at no extra cost to you.</div>
+    </div>
+  </div>
+</footer>
 </body>
 </html>
