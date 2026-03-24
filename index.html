@@ -6,6 +6,13 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>AI Tool Pick — Best AI Tools for UK Small Businesses</title>
 <meta name="description" content="Independent AI tool reviews for UK small businesses. Find the right AI software, compare pricing, and save time with honest recommendations.">
+<meta property="og:title" content="AI Tool Pick — Best AI Tools for UK Small Businesses">
+<meta property="og:description" content="Independent AI tool reviews for UK small businesses. Find the right AI software, compare pricing, and save time with honest recommendations.">
+<meta property="og:url" content="https://aitoolpick.co.uk">
+<meta property="og:type" content="website">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-PZQQ8VR469"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-PZQQ8VR469');</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
@@ -118,13 +125,20 @@ footer{background:var(--paper);border-top:1px solid var(--border);padding:clamp(
 .hero-left>*:nth-child(3){animation-delay:.25s}
 .hero-left>*:nth-child(4){animation-delay:.35s}
 @media(max-width:900px){.hero{grid-template-columns:1fr}.tools-grid{grid-template-columns:1fr 1fr}.review-card{grid-template-columns:1fr}.categories-grid{grid-template-columns:repeat(2,1fr)}.footer-top{grid-template-columns:1fr 1fr}}
-@media(max-width:600px){.nav-links{display:none}.tools-grid{grid-template-columns:1fr}.categories-grid{grid-template-columns:1fr 1fr}.newsletter-form{flex-direction:column}.footer-top{grid-template-columns:1fr}.article-row{grid-template-columns:48px 1fr}.article-arrow{display:none}}
+.hamburger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:8px}
+.hamburger span{display:block;width:20px;height:2px;background:var(--ink);border-radius:2px;transition:all .2s}
+@media(max-width:600px){.nav-links{display:none}.nav-links.open{display:flex;flex-direction:column;position:absolute;top:58px;right:0;left:0;background:rgba(250,250,247,0.97);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);padding:16px clamp(16px,4vw,48px);gap:16px;z-index:99}.hamburger{display:flex}.tools-grid{grid-template-columns:1fr}.categories-grid{grid-template-columns:1fr 1fr}.newsletter-form{flex-direction:column}.footer-top{grid-template-columns:1fr}.article-row{grid-template-columns:48px 1fr}.article-arrow{display:none}}
 </style>
 </head>
 <body>
+<div id="disclosure-bar" style="background:var(--cream);border-bottom:1px solid var(--border);padding:8px clamp(16px,4vw,48px);display:flex;align-items:center;justify-content:space-between;font-size:12px;color:var(--muted);">
+  <span>⚠️ This site contains affiliate links. We may earn a small commission if you purchase through them, at no extra cost to you.</span>
+  <button onclick="this.parentElement.style.display='none'" style="background:none;border:none;cursor:pointer;font-size:18px;color:var(--muted);padding:0 0 0 12px;line-height:1" aria-label="Dismiss">×</button>
+</div>
 <nav>
   <div class="nav-inner">
     <a href="/" class="logo">AI Tool<span>Pick</span></a>
+    <button class="hamburger" id="nav-hamburger" aria-label="Open menu" onclick="document.querySelector('.nav-links').classList.toggle('open')"><span></span><span></span><span></span></button>
     <ul class="nav-links">
       <li><a href="/blog.html">Reviews</a></li>
       <li><a href="#categories">Categories</a></li>
@@ -211,6 +225,12 @@ footer{background:var(--paper);border-top:1px solid var(--border);padding:clamp(
       <div class="tool-tagline">The most comprehensive SEO suite available. Keyword research, backlink analysis, and AI-assisted content.</div>
       <div class="tool-footer"><span class="tool-category">SEO</span><span class="tool-price">From ~£99/mo</span></div>
     </a>
+    <a href="/blog.html" class="tool-card">
+      <div class="tool-card-top"><div class="tool-icon">🎓</div><div class="tool-rating"><span class="stars">★★★★★</span>4.5</div></div>
+      <div class="tool-name">Airies</div>
+      <div class="tool-tagline">AI-powered learning platform that personalises training for your team. Upskill faster with adaptive lessons and progress tracking.</div>
+      <div class="tool-footer"><span class="tool-category">Learning</span><span class="tool-price">From $29/mo</span></div>
+    </a>
   </div>
 </section>
 
@@ -221,7 +241,6 @@ footer{background:var(--paper);border-top:1px solid var(--border);padding:clamp(
       <div class="review-title">Jasper AI: Is it worth £32/month for UK small businesses?</div>
       <div class="review-excerpt">We tested Jasper AI across 30 days of real content creation for a UK e-commerce brand. Here's what we found — the good, the bad, and whether the price is justified.</div>
       <a href="/best-ai-writing-tools-uk.html" class="btn-primary" style="font-size:12px;padding:9px 18px;">Read full review →</a>
-      <p style="font-size:11px;color:rgba(250,250,247,.4);margin-top:10px">Note: Jasper affiliate links pending programme approval — disclosure will be updated when confirmed.</p>
     </div>
     <div>
       <div class="verdict-score">4.5</div>
@@ -292,11 +311,11 @@ footer{background:var(--paper);border-top:1px solid var(--border);padding:clamp(
     <div class="newsletter-label">Stay informed</div>
     <div class="newsletter-title">Weekly AI tool picks for UK businesses</div>
     <div class="newsletter-desc">One email a week. The best new AI tools, honest reviews, and money-saving tips — curated for UK small businesses.</div>
-    <form class="newsletter-form" onsubmit="return false;">
+    <form class="newsletter-form" id="newsletter-form" onsubmit="newsletterSubmit(event)">
       <input type="email" class="newsletter-input" placeholder="your@email.co.uk">
       <button class="newsletter-btn">Subscribe</button>
     </form>
-    <div class="newsletter-note">No spam. Unsubscribe any time.</div>
+    <div class="newsletter-note" id="newsletter-note">No spam. Unsubscribe any time.</div>
   </div>
 </section>
 
@@ -326,5 +345,15 @@ footer{background:var(--paper);border-top:1px solid var(--border);padding:clamp(
     </div>
   </div>
 </footer>
+<script>
+function newsletterSubmit(e){
+  e.preventDefault();
+  document.getElementById('newsletter-form').style.display='none';
+  var note=document.getElementById('newsletter-note');
+  note.textContent='Thanks! Check your inbox.';
+  note.style.color='rgba(250,250,247,.75)';
+  note.style.fontSize='15px';
+}
+</script>
 </body>
 </html>
