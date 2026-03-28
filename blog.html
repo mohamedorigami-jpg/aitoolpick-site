@@ -244,6 +244,19 @@ footer{background:var(--paper);border-top:1px solid var(--border);padding:clamp(
       </div>
     </a>
 
+    <a href="/monzo-vs-starling-vs-tide-2026.html" class="article-card">
+      <div class="card-top">
+        <span class="card-category">Banking &amp; Finance</span>
+        <span class="card-meta">28 March 2026<span class="card-dot"> · </span>10 min read</span>
+      </div>
+      <div class="card-title">Monzo Business vs Starling vs Tide 2026: Which Is Best for UK Small Businesses?</div>
+      <div class="card-excerpt">Three free business bank accounts, one clear winner. We compare Monzo Business, Starling, and Tide on pricing, FSCS protection, overdrafts, and support.</div>
+      <div class="card-footer">
+        <span class="card-score">Top pick: <strong>Starling (4.3/5)</strong></span>
+        <span class="read-link">Read comparison →</span>
+      </div>
+    </a>
+
   </div>
 
   <div class="block-spacer"></div>
@@ -270,12 +283,6 @@ footer{background:var(--paper);border-top:1px solid var(--border);padding:clamp(
       <span class="coming-soon-badge">Coming soon</span>
       <div class="coming-soon-title">Best AI Customer Service Tools for UK Small Businesses</div>
       <div class="coming-soon-cat">Customer Service</div>
-    </div>
-
-    <div class="coming-soon-card">
-      <span class="coming-soon-badge">Coming soon</span>
-      <div class="coming-soon-title">Monzo Business vs Starling Bank vs Tide: Full Comparison 2026</div>
-      <div class="coming-soon-cat">Finance &amp; Banking</div>
     </div>
 
   </div>
@@ -336,5 +343,15 @@ footer{background:var(--paper);border-top:1px solid var(--border);padding:clamp(
   </div>
 </footer>
 
+<script>
+document.querySelectorAll('.tab-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+    document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+    btn.classList.add('active');
+    document.getElementById('tab-' + btn.dataset.tab).classList.add('active');
+  });
+});
+</script>
 </body>
 </html>
