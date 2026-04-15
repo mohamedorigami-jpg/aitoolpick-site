@@ -2,3 +2,8 @@ User-agent: *
 Allow: /
 
 Sitemap: https://aitoolpick.co.uk/sitemap.xml
+
+# Block crawling of test/draft files
+Disallow: /test-
+Disallow: /2026-03-16
+Disallow: /*-old*
