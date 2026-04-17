@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Tool Finder Quiz — Which AI Tool Is Right for Your UK Business? | AI Tool Pick</title>
+<meta name="description" content="Take our free 60-second quiz to find the best AI tool for your UK business. Get a personalised recommendation based on your industry, budget, and needs.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://aitoolpick.co.uk/ai-tool-finder-quiz.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="AI Tool Finder Quiz — Free Personalised Recommendation">
+<meta property="og:description" content="60-second quiz. Get a personalised AI tool recommendation for your UK business.">
+<meta property="og:url" content="https://aitoolpick.co.uk/ai-tool-finder-quiz.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "AI Tool Finder Quiz",
+  "description": "Free quiz to find the best AI tool for your UK small business",
+  "url": "https://aitoolpick.co.uk/ai-tool-finder-quiz.html",
+  "applicationCategory": "BusinessApplication",
+  "operatingSystem": "Web",
+  "offers": {"@type": "Offer", "price": "0", "priceCurrency": "GBP"}
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type": "Question", "name": "How does the AI Tool Finder quiz work?", "acceptedAnswer": {"@type": "Answer", "text": "Answer 5 quick questions about your business, budget, and biggest time-wasters. We match you with the best AI tool for your specific needs."}},
+    {"@type": "Question", "name": "Is the AI Tool Finder quiz free?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, completely free. No signup required to get your result."}},
+    {"@type": "Question", "name": "How accurate are the recommendations?", "acceptedAnswer": {"@type": "Answer", "text": "Our recommendations are based on real testing of each tool with UK small businesses. We consider GBP pricing, UK-specific features, and actual value for money."}}
+  ]
+}
+</script>
+<style>
+:root{--ink:#0f0f0f;--paper:#fafaf7;--cream:#f4f0e8;--accent:#d4500a;--accent2:#1a6b3a;--muted:#6b6b6b;--border:#e2ddd4;--surface:#ffffff}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--paper);color:var(--ink);font-family:'DM Sans',sans-serif;line-height:1.6;font-weight:300;-webkit-font-smoothing:antialiased}
+nav{position:sticky;top:0;z-index:100;background:rgba(250,250,247,0.95);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);padding:0 clamp(16px,4vw,48px)}
+.nav-inner{max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:56px}
+.logo{font-family:'Playfair Display',serif;font-size:18px;font-weight:700;color:var(--ink);text-decoration:none}
+.logo span{color:var(--accent)}
+.hero{text-align:center;padding:clamp(48px,8vw,96px) clamp(16px,4vw,48px);background:linear-gradient(135deg,#0f0f0f 0%,#1a1a2e 100%);color:var(--paper)}
+.hero h1{font-family:'Playfair Display',serif;font-size:clamp(28px,5vw,48px);font-weight:900;letter-spacing:-1.5px;margin-bottom:16px}
+.hero p{font-size:17px;color:rgba(250,250,247,.65);max-width:500px;margin:0 auto 32px}
+.quiz-container{max-width:640px;margin:0 auto;padding:clamp(32px,5vw,56px) clamp(16px,4vw,48px)}
+.quiz-step{display:none}
+.quiz-step.active{display:block}
+.question-num{font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);margin-bottom:8px}
+.question-text{font-family:'Playfair Display',serif;font-size:clamp(20px,3vw,28px);font-weight:700;letter-spacing:-.5px;margin-bottom:24px;line-height:1.2}
+.options{display:flex;flex-direction:column;gap:10px}
+.option{background:var(--surface);border:2px solid var(--border);border-radius:10px;padding:16px 20px;cursor:pointer;transition:all .15s;font-size:15px;font-weight:400;text-align:left;font-family:'DM Sans',sans-serif;color:var(--ink)}
+.option:hover{border-color:var(--accent);background:rgba(212,80,10,.03)}
+.option.selected{border-color:var(--accent);background:rgba(212,80,10,.06);font-weight:500}
+.progress{display:flex;gap:6px;margin-bottom:32px}
+.progress-dot{width:100%;height:4px;background:var(--border);border-radius:2px;transition:background .3s}
+.progress-dot.done{background:var(--accent)}
+.progress-dot.current{background:var(--accent2)}
+.result-container{display:none}
+.result-card{background:var(--ink);color:var(--paper);border-radius:16px;padding:clamp(28px,4vw,40px);text-align:center;margin-bottom:24px}
+.result-label{font-size:10px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);margin-bottom:12px}
+.result-tool{font-family:'Playfair Display',serif;font-size:clamp(24px,4vw,36px);font-weight:900;letter-spacing:-.5px;margin-bottom:8px}
+.result-why{font-size:15px;color:rgba(250,250,247,.6);max-width:440px;margin:0 auto 24px;line-height:1.7}
+.result-price{font-size:13px;color:rgba(250,250,247,.4);margin-bottom:20px}
+.result-cta{display:inline-block;background:var(--accent);color:var(--paper);padding:12px 28px;border-radius:8px;text-decoration:none;font-weight:600;font-size:15px;transition:background .15s}
+.result-cta:hover{background:#b8430a}
+.email-capture{background:var(--cream);border:1px solid var(--border);border-radius:12px;padding:28px 32px;text-align:center;margin-top:32px}
+.email-capture h3{font-family:'Playfair Display',serif;font-size:20px;font-weight:700;margin-bottom:8px}
+.email-capture p{font-size:14px;color:var(--muted);margin-bottom:16px}
+.email-form{display:flex;gap:10px;max-width:400px;margin:0 auto}
+.email-input{flex:1;border:1px solid var(--border);border-radius:8px;padding:11px 16px;font-family:'DM Sans',sans-serif;font-size:13px;outline:none}
+.email-input:focus{border-color:var(--accent)}
+.email-btn{background:var(--accent2);color:white;border:none;border-radius:8px;padding:11px 20px;font-family:'DM Sans',sans-serif;font-size:13px;font-weight:600;cursor:pointer}
+.email-note{font-size:11px;color:var(--muted);margin-top:10px}
+footer{background:var(--ink);color:rgba(250,250,247,.5);padding:40px clamp(16px,4vw,48px);margin-top:64px;font-size:13px;text-align:center}
+footer a{color:rgba(250,250,247,.5);text-decoration:none}
+</style>
+</head>
+<body>
+<nav><div class="nav-inner"><a href="https://aitoolpick.co.uk" class="logo">AI Tool Pick<span>.</span></a><a href="https://aitoolpick.co.uk/blog.html" style="font-size:13px;color:var(--muted);text-decoration:none">← All Reviews</a></div></nav>
+
+<section class="hero">
+  <h1>Find the Right AI Tool in 60 Seconds</h1>
+  <p>Answer 5 quick questions. Get a personalised recommendation for your UK business.</p>
+</section>
+
+<div class="quiz-container">
+  <div class="progress">
+    <div class="progress-dot current" id="pd0"></div>
+    <div class="progress-dot" id="pd1"></div>
+    <div class="progress-dot" id="pd2"></div>
+    <div class="progress-dot" id="pd3"></div>
+    <div class="progress-dot" id="pd4"></div>
+  </div>
+
+  <!-- Q1 -->
+  <div class="quiz-step active" id="step0">
+    <div class="question-num">Question 1 of 5</div>
+    <div class="question-text">What does your business do?</div>
+    <div class="options">
+      <button class="option" onclick="pick(0,'trade')">Trade or service business (plumber, electrician, cleaner)</button>
+      <button class="option" onclick="pick(0,'retail')">Retail, salon, restaurant, or hospitality</button>
+      <button class="option" onclick="pick(0,'professional')">Professional services (accountant, solicitor, consultant)</button>
+      <button class="option" onclick="pick(0,'creative')">Creative or marketing (designer, agency, content)</button>
+    </div>
+  </div>
+
+  <!-- Q2 -->
+  <div class="quiz-step" id="step1">
+    <div class="question-num">Question 2 of 5</div>
+    <div class="question-text">What eats most of your time?</div>
+    <div class="options">
+      <button class="option" onclick="pick(1,'writing')">Writing — emails, proposals, social posts</button>
+      <button class="option" onclick="pick(1,'admin')">Admin — invoicing, scheduling, chasing payments</button>
+      <button class="option" onclick="pick(1,'marketing')">Marketing — SEO, content, social media</button>
+      <button class="option" onclick="pick(1,'meetings')">Meetings — notes, follow-ups, summaries</button>
+    </div>
+  </div>
+
+  <!-- Q3 -->
+  <div class="quiz-step" id="step2">
+    <div class="question-num">Question 3 of 5</div>
+    <div class="question-text">Monthly budget for AI tools?</div>
+    <div class="options">
+      <button class="option" onclick="pick(2,'free')">Free only — I'll pay when I see results</button>
+      <button class="option" onclick="pick(2,'low')">Under £20/month — small investment</button>
+      <button class="option" onclick="pick(2,'mid')">£20–£50/month — worth it if it saves time</button>
+      <button class="option" onclick="pick(2,'high')">£50+/month — I want the best tools</button>
+    </div>
+  </div>
+
+  <!-- Q4 -->
+  <div class="quiz-step" id="step3">
+    <div class="question-num">Question 4 of 5</div>
+    <div class="question-text">How tech-savvy is your team?</div>
+    <div class="options">
+      <button class="option" onclick="pick(3,'beginner')">Not very — keep it simple</button>
+      <button class="option" onclick="pick(3,'intermediate')">Decent — can learn new tools</button>
+      <button class="option" onclick="pick(3,'advanced')">Very — we love trying new tech</button>
+    </div>
+  </div>
+
+  <!-- Q5 -->
+  <div class="quiz-step" id="step4">
+    <div class="question-num">Question 5 of 5</div>
+    <div class="question-text">How many people in your business?</div>
+    <div class="options">
+      <button class="option" onclick="pick(4,'solo')">Just me</button>
+      <button class="option" onclick="pick(4,'small')">2–10 people</button>
+      <button class="option" onclick="pick(4,'medium')">11–50 people</button>
+      <button class="option" onclick="pick(4,'large')">50+ people</button>
+    </div>
+  </div>
+
+  <!-- Result -->
+  <div class="result-container" id="result">
+    <div class="result-card">
+      <div class="result-label">Your Best Match</div>
+      <div class="result-tool" id="result-name"></div>
+      <div class="result-why" id="result-why"></div>
+      <div class="result-price" id="result-price"></div>
+      <a href="#" class="result-cta" id="result-link" target="_blank" rel="noopener nofollow">Try It Free →</a>
+    </div>
+
+    <div class="email-capture">
+      <h3>Want more picks like this?</h3>
+      <p>Get a weekly email with the best new AI tools for UK businesses.</p>
+      <form class="email-form" onsubmit="return false;">
+        <input type="email" class="email-input" placeholder="your@email.co.uk">
+        <button class="email-btn">Subscribe</button>
+      </form>
+      <div class="email-note">No spam. Unsubscribe anytime.</div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <p><a href="https://aitoolpick.co.uk">AI Tool Pick</a> | <a href="https://aitoolpick.co.uk/blog.html">All Reviews</a> | <a href="https://aitoolpick.co.uk/affiliate-disclosure.html">Affiliate Disclosure</a></p>
+  <p style="margin-top:8px">&copy; 2026 AI Tool Pick. All rights reserved.</p>
+</footer>
+
+<script>
+const answers = {};
+const tools = {
+  'jasper-ai': {name:'Jasper AI', why:'Jasper is the best all-round writing tool for UK businesses. It handles emails, proposals, social posts, and more — saving you hours every week.', price:'From £19/month', link:'https://jasper.ai'},
+  'copyai': {name:'Copy.ai', why:'Copy.ai excels at marketing copy and sales content. If you need fast, high-quality marketing text, this is your tool.', price:'From £36/month', link:'https://copy.ai'},
+  'koala-writer': {name:'Koala Writer', why:'Koala Writer is the budget-friendly option that punches above its weight. Great for content-heavy businesses on a tight budget.', price:'From £9/month', link:'https://koala.sh'},
+  'neuronwriter': {name:'NeuronWriter', why:'NeuronWriter is an affordable SEO tool that helps you write content Google actually ranks. Perfect for businesses that need organic traffic.', price:'From £19/month', link:'https://neuronwriter.com'},
+  'surfer-seo': {name:'Surfer SEO', why:'Surfer SEO is the premium content optimisation tool. If SEO is your main growth channel, the investment pays for itself.', price:'From £79/month', link:'https://surferseo.com'},
+  'fathom-ai': {name:'Fathom AI', why:'Fathom records, transcribes, and summarises your meetings for free. If you spend hours in meetings, this saves you that time instantly.', price:'Free', link:'https://fathom.video'},
+  'freeagent': {name:'FreeAgent', why:'FreeAgent handles invoicing, expenses, and tax — built specifically for UK businesses. Free if you bank with NatWest or Mettle.', price:'From £14.50/month (free with NatWest)', link:'https://freeagent.com'},
+  'mindbody': {name:'Mindbody', why:'Mindbody is the go-to for fitness, beauty, and wellness businesses. Handles bookings, payments, and client management in one place.', price:'From £99/month', link:'https://mindbodyonline.com'},
+};
+
+function pick(q, val) {
+  answers[q] = val;
+  // highlight selected
+  document.querySelectorAll('#step'+q+' .option').forEach(o => o.classList.remove('selected'));
+  event.target.classList.add('selected');
+  // progress
+  document.getElementById('pd'+q).classList.remove('current');
+  document.getElementById('pd'+q).classList.add('done');
+  // next step after short delay
+  setTimeout(() => {
+    if (q < 4) {
+      document.getElementById('step'+q).classList.remove('active');
+      document.getElementById('step'+(q+1)).classList.add('active');
+      document.getElementById('pd'+(q+1)).classList.add('current');
+    } else {
+      showResult();
+    }
+  }, 300);
+}
+
+function showResult() {
+  document.querySelectorAll('.quiz-step').forEach(s => s.classList.remove('active'));
+  document.getElementById('pd4').classList.remove('current');
+  document.getElementById('pd4').classList.add('done');
+
+  // Simple recommendation logic
+  let pick = 'jasper-ai'; // default
+
+  const time = answers[1];
+  const budget = answers[2];
+  const biz = answers[0];
+
+  if (time === 'admin' && budget !== 'free') pick = 'freeagent';
+  else if (time === 'admin' && budget === 'free') pick = 'freeagent';
+  else if (time === 'meetings') pick = 'fathom-ai';
+  else if (time === 'marketing' && budget === 'high') pick = 'surfer-seo';
+  else if (time === 'marketing' && budget !== 'high') pick = 'neuronwriter';
+  else if (time === 'writing' && budget === 'free') pick = 'fathom-ai';
+  else if (time === 'writing' && budget === 'low') pick = 'koala-writer';
+  else if (time === 'writing') pick = 'jasper-ai';
+  else if (biz === 'retail' && budget !== 'free') pick = 'mindbody';
+  else if (biz === 'creative') pick = 'copyai';
+  else if (biz === 'professional') pick = 'jasper-ai';
+
+  const t = tools[pick];
+  document.getElementById('result-name').textContent = t.name;
+  document.getElementById('result-why').textContent = t.why;
+  document.getElementById('result-price').textContent = t.price;
+  document.getElementById('result-link').href = t.link;
+  document.getElementById('result').style.display = 'block';
+}
+</script>
+</body>
+</html>
