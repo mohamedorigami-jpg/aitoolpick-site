@@ -509,27 +509,140 @@ footer {
     text-decoration: underline;
 }
 
-/* Responsive design */
+/* ==========================================================================
+   Typography — unified with homepage design system
+   ========================================================================== */
+body {
+    font-family: 'DM Sans', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.7;
+    font-weight: 300;
+    -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+}
+
+/* ==========================================================================
+   Table styles — responsive with scroll wrapper
+   ========================================================================== */
+.table-wrapper {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    margin: 1.5rem 0;
+    border-radius: 8px;
+    border: 1px solid var(--border, #e2ddd4);
+}
+
+.table-wrapper table {
+    width: 100%;
+    min-width: 500px;
+    border-collapse: collapse;
+    font-size: 14px;
+}
+
+.table-wrapper th {
+    background: var(--ink, #0f0f0f);
+    color: var(--paper, #fafaf7);
+    padding: 12px 16px;
+    text-align: left;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+
+.table-wrapper td {
+    padding: 12px 16px;
+    border-bottom: 1px solid var(--border, #e2ddd4);
+    font-size: 14px;
+}
+
+.table-wrapper tr:last-child td {
+    border-bottom: none;
+}
+
+.table-wrapper tr:nth-child(even) td {
+    background: var(--cream, #f4f0e8);
+}
+
+/* Also handle bare tables not wrapped */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1.5rem 0;
+    font-size: 14px;
+}
+
+table th {
+    background: var(--ink, #0f0f0f);
+    color: var(--paper, #fafaf7);
+    padding: 12px 16px;
+    text-align: left;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+}
+
+table td {
+    padding: 12px 16px;
+    border-bottom: 1px solid var(--border, #e2ddd4);
+}
+
+table tr:nth-child(even) td {
+    background: var(--cream, #f4f0e8);
+}
+
+/* ==========================================================================
+   Responsive design — mobile first
+   ========================================================================== */
+@media (max-width: 900px) {
+    .article-grid,
+    .affiliate-links,
+    .footer-content {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
 @media (max-width: 768px) {
     .nav-links {
-        display: none; /* Could be made into a hamburger menu */
+        display: none;
     }
-    
+
     .hero h1 {
         font-size: 2rem;
     }
-    
+
     .article-grid,
     .affiliate-links,
     .footer-content {
         grid-template-columns: 1fr;
     }
-    
+
     .article-header h1 {
         font-size: 2rem;
     }
-    
+
     .article-body {
         padding: 0 1rem;
+    }
+
+    /* Mobile table: scroll only the table, not the page */
+    .table-wrapper {
+        margin-left: -1rem;
+        margin-right: -1rem;
+        border-radius: 0;
+        border-left: none;
+        border-right: none;
+    }
+
+    table {
+        display: block;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
     }
 }

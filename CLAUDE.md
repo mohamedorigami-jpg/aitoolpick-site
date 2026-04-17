@@ -85,10 +85,15 @@ This document explains the structure of the AI Tool Pick static site for future 
 - **Attributes**: `target="_blank" rel="nofollow"`
 
 ## Styling Notes
-- **Colors**: Blue (#3498db) for CTAs, Dark blue (#2c3e50) for headers
-- **Typography**: Segoe UI, clean and readable
+- **Colors**: CSS vars --ink, --paper, --cream, --accent, --accent2, --muted, --border, --surface
+- **Typography**: Playfair Display (headings), DM Sans (body), DM Mono (numbers/prices). Fonts loaded via Google Fonts CDN.
 - **Layout**: Responsive grid system, card-based design
 - **Spacing**: Generous padding, good contrast
+
+### Tables
+- All tables get base styles automatically (dark header, alternating rows, padding)
+- On mobile (768px), tables use `display:block;overflow-x:auto` so only the table scrolls, not the whole page
+- The CSS is in the inline `<style>` block — do NOT link to `styles.css`
 
 ## Generation Process for New Articles
 
