@@ -157,8 +157,8 @@ footer{background:var(--paper);border-top:1px solid var(--border);padding:clamp(
     </div>
     <div class="hero-stats">
       <div class="stat-item">
-        <div class="stat-number">5</div>
-        <div class="stat-label">Tools reviewed</div>
+        <div class="stat-number">50+</div>
+        <div class="stat-label">Articles published</div>
         <div class="stat-badge">↑ New reviews weekly</div>
       </div>
       <div class="stat-item">
@@ -397,6 +397,14 @@ document.querySelectorAll('.tab-btn').forEach(btn => {
     document.getElementById('tab-' + btn.dataset.tab).classList.add('active');
   });
 });
+</script>
+
+<script>
+fetch('/sitemap.xml').then(r=>r.text()).then(xml=>{
+  const count=(xml.match(/<loc>/g)||[]).length;
+  const el=document.querySelector('.stat-number');
+  if(el)el.textContent=count+'+';
+}).catch(()=>{});
 </script>
 </body>
 </html>
