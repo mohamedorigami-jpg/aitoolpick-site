@@ -423,11 +423,11 @@ footer{background:var(--paper);border-top:1px solid var(--border);padding:clamp(
     <div class="newsletter-label">Stay informed</div>
     <div class="newsletter-title">Weekly AI tool picks for UK businesses</div>
     <div class="newsletter-desc">One email a week. The best new AI tools, honest reviews, and money-saving tips - curated for UK small businesses.</div>
-    <form class="newsletter-form" onsubmit="return false;">
-      <input type="email" class="newsletter-input" placeholder="your@email.co.uk">
-      <button class="newsletter-btn">Subscribe</button>
+    <form class="newsletter-form" id="newsletter-form" onsubmit="return subscribeNewsletter(event, this)">
+      <input type="email" class="newsletter-input" placeholder="your@email.co.uk" required>
+      <button class="newsletter-btn" type="submit">Subscribe</button>
     </form>
-    <div class="newsletter-note">No spam. Unsubscribe any time.</div>
+    <div class="newsletter-note" id="newsletter-msg">No spam. Unsubscribe any time.</div>
   </div>
 </section>
 
@@ -473,6 +473,36 @@ footer{background:var(--paper);border-top:1px solid var(--border);padding:clamp(
 </footer>
 
 <script>
+function subscribeNewsletter(e, form) {
+  e.preventDefault();
+  const email = form.querySelector('input[type="email"]').value;
+  const msg = document.getElementById('newsletter-msg');
+  const btn = form.querySelector('button');
+  btn.disabled = true;
+  btn.textContent = 'Subscribing...';
+  fetch('https://formsubmit.co/ajax/morad37.marketing@gmail.com', {
+    method: 'POST',
+    headers: {'Content-Type': 'application/json', 'Accept': 'application/json'},
+    body: JSON.stringify({email: email, _subject: 'AIToolpick Newsletter Signup', _template: 'table'})
+  }).then(r => {
+    if (r.ok) {
+      msg.textContent = '✓ Subscribed! Check your inbox.';
+      msg.style.color = '#1a6b3a';
+      form.querySelector('input').value = '';
+    } else {
+      msg.textContent = 'Something went wrong. Try again.';
+      msg.style.color = '#d4500a';
+    }
+    btn.disabled = false;
+    btn.textContent = 'Subscribe';
+  }).catch(() => {
+    msg.textContent = 'Network error. Try again.';
+    msg.style.color = '#d4500a';
+    btn.disabled = false;
+    btn.textContent = 'Subscribe';
+  });
+  return false;
+}
 document.querySelectorAll('.tab-btn').forEach(btn => {
   btn.addEventListener('click', () => {
     document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));

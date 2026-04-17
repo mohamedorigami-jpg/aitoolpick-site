@@ -169,11 +169,11 @@ footer a{color:rgba(250,250,247,.5);text-decoration:none}
     <div class="email-capture">
       <h3>Want more picks like this?</h3>
       <p>Get a weekly email with the best new AI tools for UK businesses.</p>
-      <form class="email-form" onsubmit="return false;">
-        <input type="email" class="email-input" placeholder="your@email.co.uk">
-        <button class="email-btn">Subscribe</button>
+      <form class="email-form" id="quiz-newsletter-form" onsubmit="return subscribeQuiz(event, this)">
+        <input type="email" class="email-input" placeholder="your@email.co.uk" required>
+        <button class="email-btn" type="submit">Subscribe</button>
       </form>
-      <div class="email-note">No spam. Unsubscribe anytime.</div>
+      <div class="email-note" id="quiz-newsletter-msg">No spam. Unsubscribe anytime.</div>
     </div>
   </div>
 </div>
@@ -246,6 +246,37 @@ function showResult() {
   document.getElementById('result-price').textContent = t.price;
   document.getElementById('result-link').href = t.link;
   document.getElementById('result').style.display = 'block';
+}
+
+function subscribeQuiz(e, form) {
+  e.preventDefault();
+  const email = form.querySelector('input[type="email"]').value;
+  const msg = document.getElementById('quiz-newsletter-msg');
+  const btn = form.querySelector('button');
+  btn.disabled = true;
+  btn.textContent = '...';
+  fetch('https://formsubmit.co/ajax/morad37.marketing@gmail.com', {
+    method: 'POST',
+    headers: {'Content-Type': 'application/json', 'Accept': 'application/json'},
+    body: JSON.stringify({email: email, _subject: 'AIToolpick Quiz Newsletter Signup', _template: 'table'})
+  }).then(r => {
+    if (r.ok) {
+      msg.textContent = '✓ Subscribed!';
+      msg.style.color = '#1a6b3a';
+      form.querySelector('input').value = '';
+    } else {
+      msg.textContent = 'Error. Try again.';
+      msg.style.color = '#d4500a';
+    }
+    btn.disabled = false;
+    btn.textContent = 'Subscribe';
+  }).catch(() => {
+    msg.textContent = 'Network error.';
+    msg.style.color = '#d4500a';
+    btn.disabled = false;
+    btn.textContent = 'Subscribe';
+  });
+  return false;
 }
 </script>
 </body>
