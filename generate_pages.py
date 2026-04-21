@@ -364,6 +364,56 @@ for slug, data in INDUSTRIES.items():
 for slug, name, pop in UK_CITIES:
     generated.append(("city", gen_city(slug, name, pop)))
 
+# ── SITEMAP REGENERATION ──
+import xml.etree.ElementTree as ET
+from xml.dom import minidom
+
+def regenerate_sitemap():
+    """Update sitemap with all HTML pages."""
+    html_files = [f for f in os.listdir(SITE) if f.endswith(".html")]
+    exclude = {"article.html", "index-old.html", "test-article.html", "CNAME",
+               "privacy-policy.html", "affiliate-disclosure.html"}
+    exclude_prefixes = ("test-", "2026-03-16-article")
+    
+    pages = []
+    for fname in sorted(html_files):
+        if fname in exclude or fname.startswith(exclude_prefixes):
+            continue
+        content = open(os.path.join(SITE, fname)).read()
+        if 'name="robots" content="noindex"' in content:
+            continue
+        pages.append(f"{DOMAIN}/{fname}")
+    
+    url_entries = []
+    for url in sorted(pages):
+        fname = url.replace(f"{DOMAIN}/", "")
+        if fname == "index.html":
+            priority, changefreq = "1.0", "weekly"
+        elif "review" in url or "-vs-" in url:
+            priority, changefreq = "0.7", "monthly"
+        elif "best-ai" in url:
+            priority, changefreq = "0.8", "monthly"
+        elif "is-" in url:
+            priority, changefreq = "0.6", "monthly"
+        else:
+            priority, changefreq = "0.8", "weekly"
+        
+        url_entries.append(
+            f'  <url>\n    <loc>{url}</loc>\n'
+            f'    <lastmod>{TODAY}</lastmod>\n'
+            f'    <changefreq>{changefreq}</changefreq>\n'
+            f'    <priority>{priority}</priority>\n  </url>'
+        )
+    
+    sitemap_xml = f'<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
+    sitemap_xml += "\n".join(url_entries) + "\n</urlset>"
+    
+    with open(os.path.join(SITE, "sitemap.xml"), "w") as f:
+        f.write(sitemap_xml)
+    print(f"Sitemap regenerated: {len(pages)} URLs")
+
+regenerate_sitemap()
+
 # Summary
 print(f"\nGenerated {len(generated)} pages:")
 from collections import Counter
