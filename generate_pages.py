@@ -40,21 +40,68 @@ UK_CITIES = [
     ("bath", "Bath", "300K"), ("reading", "Reading", "290K"),
 ]
 
-NAV = '''<nav>
+NAV = """<nav>
   <div class="nav-inner">
     <a href="https://aitoolpick.co.uk" class="logo">AI Tool Pick<span>.</span></a>
     <a href="https://aitoolpick.co.uk/blog.html" class="nav-back">← Back to Reviews</a>
   </div>
 </nav>
-<div class="disclosure">This site contains affiliate links. We may earn a commission at no extra cost to you if you buy through our links. <a href="https://aitoolpick.co.uk/affiliate-disclosure.html">Learn more</a></div>'''
+<div class="disclosure">This site contains affiliate links. We may earn a commission at no extra cost to you if you buy through our links. <a href="https://aitoolpick.co.uk/affiliate-disclosure.html">Learn more</a></div>"""
 
-FOOTER = '''<footer>
+FOOTER = """<footer>
   <p><a href="https://aitoolpick.co.uk">AI Tool Pick</a> | <a href="https://aitoolpick.co.uk/blog.html">All Reviews</a> | <a href="https://aitoolpick.co.uk/affiliate-disclosure.html">Affiliate Disclosure</a></p>
   <p style="margin-top:8px">&copy; 2026 AI Tool Pick. All rights reserved.</p>
-</footer>'''
+</footer>"""
 
 CSS = open(os.path.join(SITE, "jasper-ai-review-uk-2026.html")).read().split("<style>")[1].split("</style>")[0]
 
+NEWSLETTER_HTML = """
+<section class="newsletter-section" id="newsletter">
+  <div class="newsletter-inner">
+    <div class="newsletter-label">Stay informed</div>
+    <div class="newsletter-title">Weekly AI tool picks for UK businesses</div>
+    <div class="newsletter-desc">One email a week. The best new AI tools, honest reviews, and money-saving tips - curated for UK small businesses.</div>
+    <form class="newsletter-form" id="newsletter-form" method="POST" action="https://3cc19776.sibforms.com/serve/MUIFAOofIPWDC7p6ZNYA_lBDbGD7TXnmtRi6_C60iaM1Rq8RUYlQVOcm4IaKwQvoMYP4HPqTBS3XtCcKmUsVbjSjgtXbfWDuMKJydKD8v8U124pilWNiidY07SFTq4kT6HHD4-f2YmSBHnNWoLN2HmSTOPQiSDrfWBajIwUNN9KqvoQIGq5N6YFV3C1q1NwWIGb1DSRzsjTqNwOYvg==" target="hidden_iframe" onsubmit="newsletterSubmit(event)">
+      <input type="email" name="EMAIL" class="newsletter-input" placeholder="your@email.co.uk" required>
+      <button type="submit" class="newsletter-btn">Subscribe</button>
+      <input type="text" name="email_address_check" value="" style="display:none;">
+      <input type="hidden" name="locale" value="en">
+    </form>
+    <div class="newsletter-note" id="newsletter-note">No spam. Unsubscribe any time.</div>
+    <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"></iframe>
+  </div>
+</section>
+"""
+
+NEWSLETTER_STYLES = """
+.newsletter-section{background:var(--ink);color:var(--paper);padding:clamp(48px,8vw,96px) clamp(16px,4vw,48px);text-align:center}
+.newsletter-inner{max-width:600px;margin:0 auto}
+.newsletter-label{font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);margin-bottom:16px}
+.newsletter-title{font-family:'Playfair Display',serif;font-size:clamp(24px,4vw,36px);font-weight:700;margin-bottom:16px}
+.newsletter-desc{font-size:16px;color:rgba(250,250,247,.7);margin-bottom:32px;font-weight:300;line-height:1.6}
+.newsletter-form{display:flex;gap:12px;max-width:460px;margin:0 auto 16px}
+.newsletter-input{flex:1;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:8px;padding:12px 16px;color:var(--paper);font-family:inherit;font-size:14px;transition:all .2s}
+.newsletter-input:focus{outline:none;border-color:var(--accent);background:rgba(255,255,255,.08)}
+.newsletter-btn{background:var(--accent);color:var(--paper);border:none;border-radius:8px;padding:0 24px;font-weight:600;font-size:14px;cursor:pointer;transition:all .2s;white-space:nowrap}
+.newsletter-btn:hover{background:#b83f08;transform:translateY(-1px)}
+.newsletter-note{font-size:12px;color:rgba(250,250,247,.4)}
+@media (max-width:480px){.newsletter-form{flex-direction:column}.newsletter-btn{padding:12px}}
+"""
+
+NEWSLETTER_JS = """
+function newsletterSubmit(e){
+  document.getElementById('newsletter-form').style.opacity='0.5';
+  document.getElementById('newsletter-form').style.pointerEvents='none';
+  setTimeout(function(){
+    document.getElementById('newsletter-form').style.display='none';
+    var note=document.getElementById('newsletter-note');
+    note.textContent='Thanks! Check your inbox to confirm.';
+    note.style.color='var(--accent)';
+    note.style.fontSize='16px';
+    note.style.fontWeight='600';
+  }, 500);
+}
+"""
 
 def faq_schema(questions):
     items = []
@@ -62,11 +109,9 @@ def faq_schema(questions):
         items.append({"@type": "Question", "name": q, "acceptedAnswer": {"@type": "Answer", "text": a}})
     return json.dumps({"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": items}, indent=2)
 
-
 def breadcrumb_schema(items):
     crumbs = [{"@type": "ListItem", "position": i+1, "name": n, "item": u} for i, (n, u) in enumerate(items)]
     return json.dumps({"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": crumbs}, indent=2)
-
 
 def wrap_page(title, desc, canonical, schemas, body, eyebrow="Guide"):
     schema_blocks = "\n".join(f'<script type="application/ld+json">\n{s}\n</script>' for s in schemas)
@@ -92,135 +137,12 @@ def wrap_page(title, desc, canonical, schemas, body, eyebrow="Guide"):
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="{title}">
 <meta name="twitter:description" content="{desc}">
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://sibforms.com/forms/end-form/build/sib-styles.css">
-<style>
-
-  /* Brevo base styles */
-  @font-face { font-display:block; font-family:Roboto; src:url(https://assets.brevo.com/font/Roboto/Latin/normal/normal/7529907e9eaf8ebb5220c5f9850e3811.woff2) format("woff2") }
-  @font-face { font-display:fallback; font-family:Roboto; font-weight:600; src:url(https://assets.brevo.com/font/Roboto/Latin/medium/normal/6e9caeeafb1f3491be3e32744bc30440.woff2) format("woff2") }
-  @font-face { font-display:fallback; font-family:Roboto; font-weight:700; src:url(https://assets.brevo.com/font/Roboto/Latin/bold/normal/3ef7cf158f310cf752d5ad08cd0e7e60.woff2) format("woff2") }
-  #sib-container input:-ms-input-placeholder { text-align:left; font-family:'Inter',Helvetica,sans-serif; color:#6b7280; }
-  #sib-container input::placeholder               { text-align:left; font-family:'Inter',Helvetica,sans-serif; color:#6b7280; }
-  #sib-container textarea::placeholder            { text-align:left; font-family:'Inter',Helvetica,sans-serif; color:#6b7280; }
-  #sib-container a                                { text-decoration:underline; color:#d4500a; }
-  
-  .sib-form {
-    background-color: #0a0a0b !important;
-    padding: 2rem 1rem !important;
-    font-family: 'Inter', Helvetica, sans-serif !important;
-  }
-  #sib-container.sib-container--large,
-  #sib-container.sib-container--vertical {
-    background-color: #111113 !important;
-    border: 1px solid #1f1f22 !important;
-    border-radius: 12px !important;
-    max-width: 520px !important;
-    padding: 2.5rem 2rem !important;
-    box-shadow: 0 8px 40px rgba(0,0,0,0.6) !important;
-  }
-  #sib-container .sib-form-block p,
-  #sib-container .sib-form-block {
-    font-family: 'Inter', Helvetica, sans-serif !important;
-    color: #f0f0f0 !important;
-  }
-  #sib-container .sib-form-block[style*="font-size:32px"] p,
-  #sib-container .sib-form-block[style*="font-size:32px"] {
-    font-size: 1.75rem !important;
-    font-weight: 700 !important;
-    line-height: 1.2 !important;
-    color: #ffffff !important;
-    letter-spacing: -0.02em !important;
-    margin-bottom: 0.5rem !important;
-  }
-  #sib-container .sib-form-block[style*="font-size:16px"] .sib-text-form-block p,
-  #sib-container .sib-text-form-block p {
-    color: #9ca3af !important;
-    font-size: 0.95rem !important;
-    line-height: 1.6 !important;
-  }
-  #sib-container .entry__label {
-    font-family: 'Inter', Helvetica, sans-serif !important;
-    color: #d1d5db !important;
-    font-size: 0.85rem !important;
-    font-weight: 500 !important;
-    letter-spacing: 0.01em !important;
-    text-transform: uppercase !important;
-    margin-bottom: 0.4rem !important;
-  }
-  #sib-container .input {
-    background-color: #1a1a1e !important;
-    border: 1px solid #2d2d33 !important;
-    border-radius: 8px !important;
-    color: #f0f0f0 !important;
-    font-family: 'Inter', Helvetica, sans-serif !important;
-    font-size: 0.95rem !important;
-    padding: 0.75rem 1rem !important;
-    width: 100% !important;
-    transition: border-color 0.2s ease !important;
-  }
-  #sib-container .input:focus {
-    border-color: #d4500a !important;
-    outline: none !important;
-    box-shadow: 0 0 0 3px rgba(212,80,10,0.15) !important;
-  }
-  #sib-container .entry__specification {
-    color: #4b5563 !important;
-    font-size: 0.78rem !important;
-    font-family: 'Inter', Helvetica, sans-serif !important;
-  }
-  #sib-container .sib-form-block__button {
-    background-color: #d4500a !important;
-    color: #ffffff !important;
-    font-family: 'Inter', Helvetica, sans-serif !important;
-    font-weight: 600 !important;
-    font-size: 0.95rem !important;
-    letter-spacing: 0.05em !important;
-    text-transform: uppercase !important;
-    border-radius: 8px !important;
-    border: none !important;
-    padding: 0.85rem 1.5rem !important;
-    width: 100% !important;
-    cursor: pointer !important;
-    transition: background-color 0.2s ease, transform 0.1s ease !important;
-  }
-  #sib-container .sib-form-block__button:hover {
-    background-color: #b83f08 !important;
-    transform: translateY(-1px) !important;
-  }
-  #sib-container .sib-form-block__button:active {
-    transform: translateY(0) !important;
-  }
-  #success-message {
-    background-color: #0d1f12 !important;
-    border-color: #d4500a !important;
-    border-radius: 8px !important;
-    color: #86efac !important;
-    font-family: 'Inter', Helvetica, sans-serif !important;
-  }
-  #success-message .sib-form-message-panel__inner-text {
-    color: #d4500a !important;
-    font-weight: 600 !important;
-    font-family: 'Inter', Helvetica, sans-serif !important;
-  }
-  #error-message {
-    background-color: #1f0d0d !important;
-    border-color: #ff4949 !important;
-    border-radius: 8px !important;
-    font-family: 'Inter', Helvetica, sans-serif !important;
-  }
-  @media (max-width: 600px) {
-    #sib-container.sib-container--large { padding: 1.5rem 1.25rem !important; }
-    #sib-container .sib-form-block[style*="font-size:32px"] p { font-size: 1.45rem !important; }
-  }
-</style>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400&display=swap" rel="stylesheet">
 {schema_blocks}
-<style>{CSS}</style>
+<style>{CSS}
+{NEWSLETTER_STYLES}
+</style>
 </head>
 <body>
 {NAV}
@@ -230,22 +152,11 @@ def wrap_page(title, desc, canonical, schemas, body, eyebrow="Guide"):
     {body}
   </article>
 </main>
+{NEWSLETTER_HTML}
 {FOOTER}
-
-<script>
-  window.REQUIRED_CODE_ERROR_MESSAGE = 'Please choose a country code';
-  window.LOCALE = 'en';
-  window.EMAIL_INVALID_MESSAGE = window.SMS_INVALID_MESSAGE = "The information provided is invalid. Please review the field format and try again.";
-  window.REQUIRED_ERROR_MESSAGE = "This field cannot be left blank.";
-  window.GENERIC_INVALID_MESSAGE = "The information provided is invalid. Please review the field format and try again.";
-  window.translation = { common: { selectedList: '{quantity} list selected', selectedLists: '{quantity} lists selected', selectedOption: '{quantity} selected', selectedOptions: '{quantity} selected' } };
-  var AUTOHIDE = Boolean(0);
-</script>
-<script defer src="https://sibforms.com/forms/end-form/build/main.js"></script>
-
+<script>{NEWSLETTER_JS}</script>
 </body>
 </html>'''
-
 
 def tool_link(slug):
     t = TOOLS[slug]
@@ -255,15 +166,12 @@ def tool_link(slug):
       <a href="{t["aff"]}" class="cta-button" target="_blank" rel="noopener nofollow">Get {t["name"]}</a>
     </div>'''
 
-
-# ── COMPARISON PAGES ──
 def gen_comparison(slug1, slug2):
     t1, t2 = TOOLS[slug1], TOOLS[slug2]
     fname = f"{slug1}-vs-{slug2}-uk-2026.html"
     title = f"{t1['name']} vs {t2['name']} 2026: Which Is Better for UK Small Businesses?"
     desc = f"Compare {t1['name']} and {t2['name']} for UK businesses. Pricing in GBP, features, pros and cons, and our verdict."
     canonical = f"{DOMAIN}/{fname}"
-
     schemas = [
         json.dumps({"@context":"https://schema.org","@type":"Article","headline":title,"description":desc,"author":{"@type":"Organization","name":"AI Tool Pick"},"publisher":{"@type":"Organization","name":"AI Tool Pick","url":DOMAIN},"datePublished":TODAY,"dateModified":TODAY,"url":canonical}),
         breadcrumb_schema([("Home", DOMAIN), ("Blog", f"{DOMAIN}/blog.html"), (f"{t1['name']} vs {t2['name']}", canonical)]),
@@ -273,7 +181,6 @@ def gen_comparison(slug1, slug2):
             (f"Is there a free trial for {t1['name']} or {t2['name']}?", f"Both tools offer free trials or free tiers. Check their websites for current availability."),
         ])
     ]
-
     body = f'''<h1>{t1["name"]} vs {t2["name"]} 2026: Head-to-Head Comparison</h1>
     <div class="article-meta">
       <span class="meta-tag">{t1["cat"]}</span>
@@ -292,272 +199,100 @@ def gen_comparison(slug1, slug2):
       <tr><td>Category</td><td>{t1["cat"]}</td><td>{t2["cat"]}</td></tr>
       <tr><td>Our Score</td><td>{t1["score"]}/5</td><td>{t2["score"]}/5</td></tr>
     </tbody></table>
-    <h2>Feature Comparison</h2>
-    <p>Both {t1["name"]} and {t2["name"]} are strong options in the {t1["cat"].lower()} space. {t1["name"]} focuses on {t1["cat"].lower()} for UK businesses, while {t2["name"]} takes a similar approach with its own strengths. The right choice depends on your budget and what you need most.</p>
-    <h2>{t1["name"]} Pros and Cons</h2>
-    <div class="pros-cons">
-      <div class="pros"><h4>Pros</h4><ul>
-        <li>Strong {t1["cat"].lower()} features</li><li>{t1["price"]} pricing</li><li>Good for UK businesses</li>
-      </ul></div>
-      <div class="cons"><h4>Cons</h4><ul>
-        <li>May lack advanced features of competitors</li><li>Limited integrations</li>
-      </ul></div>
-    </div>
-    <h2>{t2["name"]} Pros and Cons</h2>
-    <div class="pros-cons">
-      <div class="pros"><h4>Pros</h4><ul>
-        <li>Strong {t2["cat"].lower()} features</li><li>{t2["price"]} pricing</li><li>Good for UK businesses</li>
-      </ul></div>
-      <div class="cons"><h4>Cons</h4><ul>
-        <li>May lack advanced features of competitors</li><li>Limited integrations</li>
-      </ul></div>
-    </div>
-    <h2>Our Verdict</h2>
-    <div class="verdict-box"><div class="verdict-label">THE VERDICT</div>
-      <h3>{t1["name"] if t1["score"] >= t2["score"] else t2["name"]} edges ahead for UK small businesses</h3>
-      <p style="color:rgba(250,250,247,.7);margin-bottom:0">Both are solid tools. {"The price difference makes " + t1["name"] + " the better value pick." if t1["price"] < t2["price"] else t2["name"] + " offers competitive pricing."} We recommend trying both free trials before committing.</p>
-    </div>
     {tool_link(slug1)}
     {tool_link(slug2)}'''
-
     with open(os.path.join(SITE, fname), "w") as f:
         f.write(wrap_page(title, desc, canonical, schemas, body, t1["cat"]))
     return fname
 
-
-# ── IS IT WORTH IT PAGES ──
 def gen_worth_it(slug):
     t = TOOLS[slug]
     fname = f"is-{slug}-worth-it-uk-2026.html"
     title = f"Is {t['name']} Worth It in 2026? UK Small Business Guide"
     desc = f"Is {t['name']} worth the cost for UK businesses? We break down {t['price']} pricing, time saved, and who should buy it."
     canonical = f"{DOMAIN}/{fname}"
-
     schemas = [
         json.dumps({"@context":"https://schema.org","@type":"Article","headline":title,"description":desc,"author":{"@type":"Organization","name":"AI Tool Pick"},"publisher":{"@type":"Organization","name":"AI Tool Pick","url":DOMAIN},"datePublished":TODAY,"dateModified":TODAY,"url":canonical}),
         breadcrumb_schema([("Home", DOMAIN), ("Blog", f"{DOMAIN}/blog.html"), (f"Is {t['name']} Worth It?", canonical)]),
         faq_schema([
             (f"How much does {t['name']} cost?", f"{t['name']} costs {t['price']} for UK businesses."),
-            (f"Is {t['name']} worth it for small businesses?", f"Yes, if you spend more than 2 hours per week on {t['cat'].lower()} tasks, {t['name']} typically pays for itself within the first month."),
-            (f"Does {t['name']} offer a free trial?", f"Most plans include a free trial period. Check their website for current offers."),
-            (f"What is the best alternative to {t['name']}?", f"See our comparison pages for side-by-side reviews of {t['name']} alternatives."),
+            (f"Is {t['name']} good for small teams?", f"Yes, {t['name']} is designed to help small teams automate manual tasks efficiently."),
         ])
     ]
-
-    body = f'''<h1>Is {t["name"]} Worth It in 2026?</h1>
+    body = f'''<h1>Is {t["name"]} Worth the Cost in 2026?</h1>
     <div class="article-meta">
       <span class="meta-tag">{t["cat"]}</span>
       <span>{TODAY}</span>
       <span>AI Tool Pick Team</span>
     </div>
-    <p class="article-intro">{t["name"]} costs {t["price"]}. That is money out of your pocket every month. Is it actually worth it for a UK small business? We did the maths.</p>
-    <div class="score-overview"><div>
-      <div class="score-big">{t["score"]}</div>
-      <div class="score-big-label">OUT OF 5</div>
-    </div><div>
-      <div class="score-row"><span class="score-row-label">Value</span><div class="score-track"><div class="score-fill" style="width:{t['score']*20}%"></div></div><span class="score-val">{t["score"]}</span></div>
-      <div class="score-row"><span class="score-row-label">Features</span><div class="score-track"><div class="score-fill" style="width:{min(t['score']*20+5,100)}%"></div></div><span class="score-val">{min(t['score']+0.3,5):.1f}</span></div>
-    </div></div>
-    <h2>What Does {t["name"]} Do?</h2>
-    <p>{t["name"]} is a {t["cat"].lower()} tool that helps UK businesses work faster. It handles the repetitive parts of {t["cat"].lower()} so your team can focus on what matters.</p>
-    <h2>The Cost Breakdown</h2>
-    <table class="price-table"><thead><tr><th>Metric</th><th>Value</th></tr></thead><tbody>
-      <tr><td>Monthly Cost</td><td class="price-gbp">{t["price"]}</td></tr>
-      <tr><td>Annual Cost</td><td class="price-gbp">{t["price"].replace("/mo", "")} × 12</td></tr>
-      <tr><td>Cost Per Working Day</td><td class="price-gbp">~£{float(re.sub(r'[^0-9.]','', t["price"].replace("From ","").replace("Free","0")) or "0")/22:.2f}</td></tr>
-    </tbody></table>
-    <h2>Who Should Buy {t["name"]}?</h2>
-    <p>If your team spends more than 2 hours a week on {t["cat"].lower()} tasks, {t["name"]} will likely pay for itself. The time saved compounds over months. A typical UK business saves 8-15 hours per month.</p>
-    <h2>Who Should Skip It?</h2>
-    <p>If you only do {t["cat"].lower()} tasks occasionally or have a very small team, the free tier or a simpler tool might be enough. Do not pay for features you will not use.</p>
-    <h2>Our Verdict</h2>
-    <div class="verdict-box"><div class="verdict-label">THE VERDICT</div>
-      <h3>{t["name"]} is {"worth it" if t["score"] >= 3.5 else "worth considering"} for most UK businesses</h3>
-      <p style="color:rgba(250,250,247,.7);margin-bottom:0">At {t["price"]}, {t["name"]} delivers enough value to justify the cost for businesses that actively use {t["cat"].lower()} tools. The time saved outweighs the subscription cost within the first month.</p>
-    </div>
+    <p class="article-intro">{t["name"]} is one of the most talked-about tools in the {t["cat"].lower()} space. But for UK small businesses with tight budgets, is it actually worth the {t["price"]} starting price? We break it down.</p>
     {tool_link(slug)}'''
-
     with open(os.path.join(SITE, fname), "w") as f:
         f.write(wrap_page(title, desc, canonical, schemas, body, t["cat"]))
     return fname
 
-
-# ── INDUSTRY PAGES ──
-def gen_industry(slug, data):
+def gen_industry(slug):
+    ind = INDUSTRIES[slug]
     fname = f"best-ai-tools-for-{slug}-uk-2026.html"
-    title = f"Best AI Tools for {data['name']} in the UK (2026)"
-    desc = f"Top AI tools for {data['name'].lower()} in the UK. Save time on {', '.join(data['pain'][:2])} and more."
+    title = f"Best AI Tools for {ind['name']} in the UK (2026)"
+    desc = f"Discover the best AI software for {ind['name']} in the UK. Automate {ind['pain'][0]} and {ind['pain'][1]} to save hours every week."
     canonical = f"{DOMAIN}/{fname}"
-
     schemas = [
         json.dumps({"@context":"https://schema.org","@type":"Article","headline":title,"description":desc,"author":{"@type":"Organization","name":"AI Tool Pick"},"publisher":{"@type":"Organization","name":"AI Tool Pick","url":DOMAIN},"datePublished":TODAY,"dateModified":TODAY,"url":canonical}),
-        breadcrumb_schema([("Home", DOMAIN), ("Blog", f"{DOMAIN}/blog.html"), (f"AI for {data['name']}", canonical)]),
-        faq_schema([
-            (f"What AI tools do {data['name'].lower()} need?", f"The most useful AI tools for {data['name'].lower()} handle {', '.join(data['pain'][:2])}."),
-            (f"Is AI too expensive for {data['name'].lower()}?", f"Most AI tools start under £20/month. The time saved usually covers the cost within weeks."),
-            (f"Which AI tool is best for {data['name'].lower()}?", f"We recommend starting with {TOOLS[data['tools'][0]]['name']} — it covers the most common {data['name'].lower()} needs."),
-        ])
+        breadcrumb_schema([("Home", DOMAIN), ("Blog", f"{DOMAIN}/blog.html"), (f"AI for {ind['name']}", canonical)]),
     ]
-
-    tool_cards = ""
-    for ts in data["tools"]:
-        t = TOOLS[ts]
-        tool_cards += f'''<h2>{t["name"]}</h2>
-        <p>{t["name"]} is a {t["cat"].lower()} tool that helps {data["name"].lower()} with {data["pain"][0]}. Priced at {t["price"]}, it is accessible for most small businesses.</p>
-        {tool_link(ts)}'''
-
-    pain_list = "".join(f"<li>{p}</li>" for p in data["pain"])
-
-    body = f'''<h1>Best AI Tools for {data["name"]} in the UK (2026)</h1>
+    tool_list_html = "\n".join(f"<li><strong>{TOOLS[ts]['name']}:</strong> Best for {TOOLS[ts]['cat']}</li>" for ts in ind["tools"])
+    body = f'''<h1>Top AI Tools for {ind["name"]}</h1>
     <div class="article-meta">
-      <span class="meta-tag">Industry</span>
+      <span class="meta-tag">Industry Guide</span>
       <span>{TODAY}</span>
-      <span>AI Tool Pick Team</span>
     </div>
-    <p class="article-intro">Running a {data["name"].lower()} business in the UK means juggling {data["pain"][0]}, {data["pain"][1]}, and more. These AI tools handle the repetitive work so you can focus on your customers.</p>
-    <div class="key-box"><h3>Common Pain Points for {data["name"]}</h3><ul>{pain_list}</ul></div>
-    {tool_cards}
-    <h2>Our Recommendation</h2>
-    <div class="verdict-box"><div class="verdict-label">RECOMMENDATION</div>
-      <h3>Start with {TOOLS[data['tools'][0]]['name']} — then add more as needed</h3>
-      <p style="color:rgba(250,250,247,.7);margin-bottom:0">Do not try to adopt everything at once. Pick the tool that solves your biggest pain point first. Once that is working, add a second tool for the next bottleneck.</p>
-    </div>'''
-
+    <p class="article-intro">If you're running a {ind["name"].lower()} business in the UK, you're likely spending too much time on {ind["pain"][0]} and {ind["pain"][1]}. AI can automate these tasks in minutes.</p>
+    <ul>{tool_list_html}</ul>'''
     with open(os.path.join(SITE, fname), "w") as f:
         f.write(wrap_page(title, desc, canonical, schemas, body, "Industry"))
     return fname
 
-
-# ── CITY PAGES ──
 def gen_city(slug, name, pop):
     fname = f"ai-tools-for-small-businesses-{slug}-uk-2026.html"
-    title = f"AI Tools for Small Businesses in {name} (2026)"
-    desc = f"Best AI tools for small businesses in {name}. Local guide covering writing, accounting, scheduling and SEO tools for {name} businesses."
+    title = f"AI Tools for Small Businesses in {name} (2026 Guide)"
+    desc = f"Boost your {name}-based small business with the best AI tools. Local guide for {name}'s {pop} entrepreneurs."
     canonical = f"{DOMAIN}/{fname}"
-
     schemas = [
         json.dumps({"@context":"https://schema.org","@type":"Article","headline":title,"description":desc,"author":{"@type":"Organization","name":"AI Tool Pick"},"publisher":{"@type":"Organization","name":"AI Tool Pick","url":DOMAIN},"datePublished":TODAY,"dateModified":TODAY,"url":canonical}),
-        breadcrumb_schema([("Home", DOMAIN), (f"AI Tools in {name}", canonical)]),
-        faq_schema([
-            (f"What AI tools do small businesses in {name} use?", f"Most {name} businesses start with writing tools like Jasper AI, accounting tools like FreeAgent, and scheduling tools like Mindbody."),
-            (f"Are AI tools expensive for {name} businesses?", f"Most AI tools start under £20/month. Many offer free trials so you can test before committing."),
-        ])
+        breadcrumb_schema([("Home", DOMAIN), ("Blog", f"{DOMAIN}/blog.html"), (f"AI in {name}", canonical)]),
     ]
-
-    top_tools = ["jasper-ai", "freeagent", "neuronwriter", "fathom-ai"]
-    tool_section = ""
-    for ts in top_tools:
-        t = TOOLS[ts]
-        tool_section += f'''<h2>{t["name"]}</h2>
-        <p>Popular with {name} businesses for {t["cat"].lower()}. Priced at {t["price"]}.</p>
-        {tool_link(ts)}'''
-
-    body = f'''<h1>AI Tools for Small Businesses in {name}</h1>
+    body = f'''<h1>How {name} Small Businesses are Using AI in 2026</h1>
     <div class="article-meta">
       <span class="meta-tag">Local Guide</span>
       <span>{TODAY}</span>
-      <span>AI Tool Pick Team</span>
     </div>
-    <p class="article-intro">{name} has a thriving small business community with over {pop} people in the metro area. AI tools are helping {name} businesses save time, cut costs, and compete with larger companies. Here are the best tools for small businesses in {name}.</p>
-    <div class="key-box"><h3>Why {name} Businesses Need AI</h3><ul>
-      <li>Competition from larger chains and online businesses</li>
-      <li>Rising costs and tight margins</li>
-      <li>Time spent on admin instead of customers</li>
-      <li>Demand for online presence and social media</li>
-    </ul></div>
-    {tool_section}
-    <h2>Getting Started</h2>
-    <div class="verdict-box"><div class="verdict-label">OUR ADVICE</div>
-      <h3>Pick one tool, use it for a month, then decide</h3>
-      <p style="color:rgba(250,250,247,.7);margin-bottom:0">Most {name} businesses try everything at once and give up. Start with the tool that solves your biggest daily frustration. Commit to it for 30 days. Then add the next one.</p>
-    </div>'''
-
+    <p class="article-intro">{name} is home to a thriving community of {pop} entrepreneurs. In 2026, the most successful local firms are using AI to stay competitive and save time.</p>'''
     with open(os.path.join(SITE, fname), "w") as f:
-        f.write(wrap_page(title, desc, canonical, schemas, body, "Local Guide"))
+        f.write(wrap_page(title, desc, canonical, schemas, body, "City Guide"))
     return fname
 
-
-# ── RUN EVERYTHING ──
-generated = []
-
-# Comparisons
-pairs = [
-    ("jasper-ai", "copyai"), ("jasper-ai", "koala-writer"), ("jasper-ai", "neuronwriter"),
-    ("jasper-ai", "surfer-seo"), ("copyai", "koala-writer"), ("copyai", "neuronwriter"),
-    ("neuronwriter", "surfer-seo"), ("freeagent", "mindbody"), ("fathom-ai", "mindbody"),
-    ("jasper-ai", "airies"), ("copyai", "airies"), ("koala-writer", "airies"),
-    ("jasper-ai", "fathom-ai"), ("jasper-ai", "freeagent"), ("copyai", "freeagent"),
-    ("neuronwriter", "jasper-ai"), ("surfer-seo", "neuronwriter"), ("fathom-ai", "jasper-ai"),
-]
-for s1, s2 in pairs:
-    generated.append(("comparison", gen_comparison(s1, s2)))
-
-# Is it worth it
-for slug in TOOLS:
-    generated.append(("worth-it", gen_worth_it(slug)))
-
-# Industry pages
-for slug, data in INDUSTRIES.items():
-    generated.append(("industry", gen_industry(slug, data)))
-
-# City pages
-for slug, name, pop in UK_CITIES:
-    generated.append(("city", gen_city(slug, name, pop)))
-
-# ── SITEMAP REGENERATION ──
-import xml.etree.ElementTree as ET
-from xml.dom import minidom
-
-def regenerate_sitemap():
-    """Update sitemap with all HTML pages."""
+def main():
+    print("Generating pages...")
+    for s1 in TOOLS:
+        for s2 in TOOLS:
+            if s1 != s2: gen_comparison(s1, s2)
+        gen_worth_it(s1)
+    for ind in INDUSTRIES: gen_industry(ind)
+    for slug, name, pop in UK_CITIES: gen_city(slug, name, pop)
+    
+    # Generate Sitemap
     html_files = [f for f in os.listdir(SITE) if f.endswith(".html")]
-    exclude = {"article.html", "index-old.html", "test-article.html", "CNAME",
-               "privacy-policy.html", "affiliate-disclosure.html"}
-    exclude_prefixes = ("test-", "2026-03-16-article")
-    
-    pages = []
-    for fname in sorted(html_files):
-        if fname in exclude or fname.startswith(exclude_prefixes):
-            continue
-        content = open(os.path.join(SITE, fname)).read()
-        if 'name="robots" content="noindex"' in content:
-            continue
-        pages.append(f"{DOMAIN}/{fname}")
-    
-    url_entries = []
-    for url in sorted(pages):
-        fname = url.replace(f"{DOMAIN}/", "")
-        if fname == "index.html":
-            priority, changefreq = "1.0", "weekly"
-        elif "review" in url or "-vs-" in url:
-            priority, changefreq = "0.7", "monthly"
-        elif "best-ai" in url:
-            priority, changefreq = "0.8", "monthly"
-        elif "is-" in url:
-            priority, changefreq = "0.6", "monthly"
-        else:
-            priority, changefreq = "0.8", "weekly"
-        
-        url_entries.append(
-            f'  <url>\n    <loc>{url}</loc>\n'
-            f'    <lastmod>{TODAY}</lastmod>\n'
-            f'    <changefreq>{changefreq}</changefreq>\n'
-            f'    <priority>{priority}</priority>\n  </url>'
-        )
-    
-    sitemap_xml = f'<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
-    sitemap_xml += "\n".join(url_entries) + "\n</urlset>"
-    
+    excluded = ["privacy-policy.html", "affiliate-disclosure.html", "index-old.html", "2026-03-16-article.html", "article.html", "test-article.html"]
     with open(os.path.join(SITE, "sitemap.xml"), "w") as f:
-        f.write(sitemap_xml)
-    print(f"Sitemap regenerated: {len(pages)} URLs")
+        f.write('<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n')
+        f.write(f'  <url><loc>{DOMAIN}/</loc><lastmod>{TODAY}</lastmod></url>\n')
+        f.write(f'  <url><loc>{DOMAIN}/blog.html</loc><lastmod>{TODAY}</lastmod></url>\n')
+        for h in sorted(html_files):
+            if h not in excluded and not h.startswith("index"):
+                f.write(f'  <url><loc>{DOMAIN}/{h}</loc><lastmod>{TODAY}</lastmod></url>\n')
+        f.write('</urlset>')
+    print(f"Sitemap regenerated: {len(html_files)} URLs")
 
-regenerate_sitemap()
-
-# Summary
-print(f"\nGenerated {len(generated)} pages:")
-from collections import Counter
-c = Counter(t for t, _ in generated)
-for t, n in c.items():
-    print(f"  {t}: {n}")
-print(f"\nTotal: {len(generated)} new pages")
+if __name__ == "__main__":
+    main()
