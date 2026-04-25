@@ -458,13 +458,12 @@ fetch('/sitemap.xml').then(r=>r.text()).then(xml=>{
 
 <script>
 function newsletterSubmit(e){
-  // Form will submit to hidden_iframe in background
   document.getElementById('newsletter-form').style.opacity='0.5';
   document.getElementById('newsletter-form').style.pointerEvents='none';
   setTimeout(function(){
     document.getElementById('newsletter-form').style.display='none';
     var note=document.getElementById('newsletter-note');
-    note.textContent='You're signed up. We'll email new posts and useful picks straight to your inbox.';
+    note.textContent="You're signed up. We'll email new posts and useful picks straight to your inbox.";
     note.style.color='var(--accent)';
     note.style.fontSize='16px';
     note.style.fontWeight='600';
