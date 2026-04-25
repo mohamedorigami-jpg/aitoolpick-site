@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="AI Tool Pick favicon">
+  <rect width="512" height="512" rx="112" fill="#ffffff"/>
+  <rect x="24" y="24" width="464" height="464" rx="88" fill="none" stroke="#d4500a" stroke-width="24"/>
+  <circle cx="204" cy="224" r="90" fill="none" stroke="#d4500a" stroke-width="28"/>
+  <line x1="284" y1="292" x2="394" y2="402" stroke="#d4500a" stroke-width="30" stroke-linecap="round"/>
+  <circle cx="408" cy="416" r="22" fill="#d4500a"/>
+  <rect x="92" y="394" width="130" height="16" rx="8" fill="#d4500a"/>
+  <path d="M394 128h30M409 113v30M388 117l21 21M429 117l-21 21" stroke="#d4500a" stroke-width="14" stroke-linecap="round"/>
+  <circle cx="204" cy="224" r="34" fill="#ffffff"/>
+</svg>

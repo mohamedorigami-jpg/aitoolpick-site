@@ -126,8 +126,8 @@ def wrap_page(title, desc, canonical, schemas, body, eyebrow="Guide"):
 <meta name="description" content="{desc}">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="{canonical}">
-<link rel="icon" type="image/png" href="/favicon-v4.png">
-<link rel="apple-touch-icon" href="/favicon-v4.png">
+<link rel="icon" type="image/svg+xml" href="/favicon-white-orange.svg">
+<link rel="apple-touch-icon" href="/favicon-white-orange.svg">
 <meta property="og:type" content="article">
 <meta property="og:title" content="{title}">
 <meta property="og:description" content="{desc}">
