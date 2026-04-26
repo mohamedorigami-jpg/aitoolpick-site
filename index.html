@@ -208,7 +208,7 @@ footer{background:var(--paper);border-top:1px solid var(--border);padding:clamp(
     </div>
     <div class="hero-stats">
       <div class="stat-item">
-        <div class="stat-number">50+</div>
+        <div class="stat-number" id="article-count">50+</div>
         <div class="stat-label">Articles published</div>
         <div class="stat-badge">↑ New reviews weekly</div>
       </div>
@@ -472,5 +472,13 @@ function newsletterSubmit(e){
 </script>
 
 
+<script>
+fetch('/sitemap.xml').then(r=>r.text()).then(xml=>{
+  const count=(xml.match(/<loc>/g)||[]).length;
+  const nice=Math.max(25,Math.floor(count/25)*25);
+  const el=document.getElementById('article-count');
+  if(el)el.textContent=nice+'+';
+}).catch(()=>{});
+</script>
 </body>
 </html>
