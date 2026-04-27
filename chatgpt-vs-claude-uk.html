@@ -19,7 +19,7 @@
 <meta property="og:site_name" content="AI Tool Pick">
 <meta property="article:published_time" content="2026-04-15">
 <meta property="article:modified_time" content="2026-04-15">
-<meta name="twitter:card" content="summary">
+<meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="ChatGPT vs Claude: Which Is Better for UK Small Businesses in 2026?">
 <meta name="twitter:description" content="ChatGPT vs Claude for UK small businesses in 2026. British English, GBP pricing, and which AI assistant wins for your business needs.">
 <meta name="twitter:image" content="https://aitoolpick.co.uk/og-image.png">
@@ -149,6 +149,18 @@
     .logo span{color:var(--accent)}
     .nav-back{font-size:13px;color:var(--muted);text-decoration:none}
     .nav-back:hover{color:var(--ink)}
+.nav-links{display:flex;align-items:center;gap:28px;list-style:none;margin:0;padding:0}
+.nav-links a{font-size:13px;font-weight:500;color:var(--muted);text-decoration:none;letter-spacing:.02em;transition:color .15s}
+.nav-links a:hover{color:var(--ink)}
+.nav-cta{background:var(--ink)!important;color:var(--paper)!important;padding:7px 16px;border-radius:6px;font-size:12px!important}
+.nav-cta:hover{background:var(--accent)!important}
+.hamburger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:8px}
+.hamburger span{display:block;width:20px;height:2px;background:var(--ink);border-radius:2px;transition:all .2s}
+@media(max-width:600px){
+  .nav-links{display:none;position:absolute;top:58px;right:0;left:0;background:var(--paper);border-bottom:1px solid var(--border);padding:16px clamp(16px,4vw,48px);gap:16px;z-index:99}
+  .nav-links.open{display:flex;flex-direction:column}
+  .hamburger{display:flex}
+}
     .disclosure{background:rgba(212,80,10,0.06);border-bottom:1px solid rgba(212,80,10,0.15);padding:10px clamp(16px,4vw,48px);font-size:12px;color:var(--muted);text-align:center}
     .disclosure a{color:var(--accent)}
     .article-layout{max-width:1100px;margin:0 auto;padding:0 clamp(16px,4vw,48px);display:grid;grid-template-columns:1fr 280px;gap:48px;align-items:start}
@@ -390,7 +402,7 @@
           <div class="verdict-text">ChatGPT Plus is the right default for most UK small businesses. Its versatility means you're not paying for a single-purpose tool - it handles writing plus dozens of other business tasks. The British English issue is real but manageable with good prompting.</div>
         </div>
 
-        <a href="https://chat.openai.com" class="cta-btn" rel="noopener">Try ChatGPT Plus →</a>
+        <a href="https://chat.openai.com" class="cta-btn" rel="noopener nofollow sponsored">Try ChatGPT Plus →</a>
         <div class="cta-note">Direct link - ChatGPT has no affiliate programme. We earn nothing from this link.</div>
       </div>
 
@@ -466,7 +478,7 @@
           <div class="verdict-text">Claude Pro is the better choice if writing quality is your primary concern. For UK businesses producing blog content, client reports, or professional copy, Claude's natural British English output and superior prose quality justify choosing it over ChatGPT. For everything else, ChatGPT Plus has more features.</div>
         </div>
 
-        <a href="https://claude.ai" class="cta-btn" rel="noopener">Try Claude Pro →</a>
+        <a href="https://claude.ai" class="cta-btn" rel="noopener nofollow sponsored" rel="noopener nofollow">Try Claude Pro →</a>
         <div class="cta-note">Direct link - Claude has no affiliate programme. We earn nothing from this link.</div>
       </div>
 
@@ -650,8 +662,17 @@
 </section>
 
   <footer style="border-top:1px solid var(--border);padding:20px clamp(16px,4vw,48px);text-align:center;font-size:12px;color:var(--muted)">
-    &copy; 2026 AI Tool Pick &nbsp;&middot;&nbsp; <a href="/privacy-policy.html" style="color:var(--muted)">Privacy Policy</a> &nbsp;&middot;&nbsp; <a href="/affiliate-disclosure.html" style="color:var(--muted)">Affiliate Disclosure</a>
-  </footer>
+  <p style="margin-bottom:8px">
+    <a href="/" style="color:var(--muted);text-decoration:none">AI Tool Pick</a> &nbsp;&middot;&nbsp;
+    <a href="/blog.html" style="color:var(--muted)">All Reviews</a> &nbsp;&middot;&nbsp;
+    <a href="/about.html" style="color:var(--muted)">About</a> &nbsp;&middot;&nbsp;
+    <a href="/contact.html" style="color:var(--muted)">Contact</a> &nbsp;&middot;&nbsp;
+    <a href="/privacy-policy.html" style="color:var(--muted)">Privacy Policy</a> &nbsp;&middot;&nbsp;
+    <a href="/terms.html" style="color:var(--muted)">Terms</a> &nbsp;&middot;&nbsp;
+    <a href="/affiliate-disclosure.html" style="color:var(--muted)">Affiliate Disclosure</a>
+  </p>
+  <p>&copy; <script>document.write(new Date().getFullYear())</script> AI Tool Pick. All rights reserved.</p>
+</footer>
 
 
 <script>

@@ -224,7 +224,7 @@ function siteSearch(query) {
     <div class="hero-stats">
       <div class="stat-item">
         <div class="stat-number" id="article-count">23</div>
-        <div class="stat-label">Reviews published</div>
+        <div class="stat-label">Reviews & guides</div>
         <div class="stat-badge">↑ New reviews weekly</div>
       </div>
       <div class="stat-item">
@@ -421,31 +421,17 @@ function siteSearch(query) {
 </section>
 
 
-<footer>
-  <div class="footer-inner">
-    <div class="footer-top">
-      <div class="footer-brand">
-        <a href="/" class="logo">AI Tool<span>Pick</span></a>
-        <p>Independent AI tool reviews for UK small businesses.</p>
-      </div>
-      <div class="footer-col">
-        <h4>Reviews</h4>
-        <ul><li><a href="/blog.html">All reviews</a></li><li><a href="/best-ai-writing-tools-uk.html">Writing tools</a></li><li><a href="/best-ai-seo-tools-uk.html">SEO tools</a></li><li><a href="/tide-business-account-review-2026.html">Finance tools</a></li></ul>
-      </div>
-      <div class="footer-col">
-        <h4>Categories</h4>
-        <ul><li><a href="/tide-business-account-review-2026.html">Finance & Banking</a></li><li><a href="/best-ai-tools-for-recruiters-uk-2026.html">Sales & Outreach</a></li><li><a href="/best-ai-presentation-tools-uk-2026.html">Design</a></li><li><a href="/best-ai-tools-for-uk-startups-2026.html">Development</a></li></ul>
-      </div>
-      <div class="footer-col">
-        <h4>Site</h4>
-        <ul><li><a href="/affiliate-disclosure.html">Affiliate Disclosure</a></li><li><a href="/privacy-policy.html">Privacy Policy</a></li><li><a href="mailto:outreach@aitoolpick.co.uk">Contact</a></li></ul>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <p>© 2026 AI Tool Pick. All rights reserved.</p>
-      <div class="affiliate-note">This site contains affiliate links. We may earn a small commission if you purchase through them, at no extra cost to you.</div>
-    </div>
-  </div>
+<footer style="border-top:1px solid var(--border);padding:20px clamp(16px,4vw,48px);text-align:center;font-size:12px;color:var(--muted)">
+  <p style="margin-bottom:8px">
+    <a href="/" style="color:var(--muted);text-decoration:none">AI Tool Pick</a> &nbsp;&middot;&nbsp;
+    <a href="/blog.html" style="color:var(--muted)">All Reviews</a> &nbsp;&middot;&nbsp;
+    <a href="/about.html" style="color:var(--muted)">About</a> &nbsp;&middot;&nbsp;
+    <a href="/contact.html" style="color:var(--muted)">Contact</a> &nbsp;&middot;&nbsp;
+    <a href="/privacy-policy.html" style="color:var(--muted)">Privacy Policy</a> &nbsp;&middot;&nbsp;
+    <a href="/terms.html" style="color:var(--muted)">Terms</a> &nbsp;&middot;&nbsp;
+    <a href="/affiliate-disclosure.html" style="color:var(--muted)">Affiliate Disclosure</a>
+  </p>
+  <p>&copy; <script>document.write(new Date().getFullYear())</script> AI Tool Pick. All rights reserved.</p>
 </footer>
 
 <script>
@@ -496,11 +482,7 @@ function newsletterSubmit(e){
 </script>
 
 <script>
-fetch('/sitemap.xml').then(r=>r.text()).then(xml=>{
-  const count=(xml.match(/<loc>/g)||[]).length;
-  const el=document.getElementById('article-count');
-  if(el)el.textContent=count;
-}).catch(()=>{});
+document.getElementById('article-count').textContent='14';
 </script>
 </body>
 </html>

@@ -61,7 +61,16 @@ footer{border-top:1px solid var(--border);padding:20px clamp(16px,4vw,48px);text
 <meta name="twitter:image" content="https://aitoolpick.co.uk/og-image.png">
 </head>
 <body>
-<nav><div class="nav-inner"><a href="/" class="logo">AI Tool<span>Pick</span></a></div></nav>
+<nav style="position:sticky;top:0;z-index:100;background:rgba(250,250,247,0.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);padding:0 clamp(16px,4vw,48px)">
+  <div class="nav-inner" style="max-width:800px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:56px">
+    <a href="/" class="logo">AI Tool<span>Pick</span></a>
+    <ul class="nav-links" style="display:flex;align-items:center;gap:28px;list-style:none;margin:0;padding:0">
+      <li><a href="/blog.html" style="font-size:13px;font-weight:500;color:var(--muted);text-decoration:none">Reviews</a></li>
+      <li><a href="/about.html" style="font-size:13px;font-weight:500;color:var(--muted);text-decoration:none">About</a></li>
+      <li><a href="/contact.html" style="font-size:13px;font-weight:500;color:var(--muted);text-decoration:none">Contact</a></li>
+    </ul>
+  </div>
+</nav>
 <div class="container">
   <div class="page-label">About</div>
   <h1>About AI Tool Pick</h1>

@@ -74,7 +74,16 @@ footer{border-top:1px solid var(--border);padding:20px clamp(16px,4vw,48px);text
 <meta name="twitter:image" content="https://aitoolpick.co.uk/og-image.png">
 </head>
 <body>
-<nav><div class="nav-inner"><a href="/" class="logo">AI Tool<span>Pick</span></a></div></nav>
+<nav style="position:sticky;top:0;z-index:100;background:rgba(250,250,247,0.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);padding:0 clamp(16px,4vw,48px)">
+  <div class="nav-inner" style="max-width:800px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:56px">
+    <a href="/" class="logo">AI Tool<span>Pick</span></a>
+    <ul class="nav-links" style="display:flex;align-items:center;gap:28px;list-style:none;margin:0;padding:0">
+      <li><a href="/blog.html" style="font-size:13px;font-weight:500;color:var(--muted);text-decoration:none">Reviews</a></li>
+      <li><a href="/about.html" style="font-size:13px;font-weight:500;color:var(--muted);text-decoration:none">About</a></li>
+      <li><a href="/contact.html" style="font-size:13px;font-weight:500;color:var(--muted);text-decoration:none">Contact</a></li>
+    </ul>
+  </div>
+</nav>
 <div class="container">
   <div class="page-label">Legal</div>
   <h1>Privacy Policy</h1>
@@ -146,7 +155,18 @@ footer{border-top:1px solid var(--border);padding:20px clamp(16px,4vw,48px);text
     <p><strong>Questions?</strong> Contact us at <a href="mailto:hello@aitoolpick.co.uk">hello@aitoolpick.co.uk</a> or write to: AI Tool Pick, Gloucester, England, UK.</p>
   </div>
 </div>
-<footer>© <script>document.write(new Date().getFullYear())</script> AI Tool Pick · <a href="/privacy-policy.html">Privacy Policy</a> · <a href="/affiliate-disclosure.html">Affiliate Disclosure</a></footer>
+<footer style="border-top:1px solid var(--border);padding:20px clamp(16px,4vw,48px);text-align:center;font-size:12px;color:var(--muted)">
+  <p style="margin-bottom:8px">
+    <a href="/" style="color:var(--muted);text-decoration:none">AI Tool Pick</a> &nbsp;&middot;&nbsp;
+    <a href="/blog.html" style="color:var(--muted)">All Reviews</a> &nbsp;&middot;&nbsp;
+    <a href="/about.html" style="color:var(--muted)">About</a> &nbsp;&middot;&nbsp;
+    <a href="/contact.html" style="color:var(--muted)">Contact</a> &nbsp;&middot;&nbsp;
+    <a href="/privacy-policy.html" style="color:var(--muted)">Privacy Policy</a> &nbsp;&middot;&nbsp;
+    <a href="/terms.html" style="color:var(--muted)">Terms</a> &nbsp;&middot;&nbsp;
+    <a href="/affiliate-disclosure.html" style="color:var(--muted)">Affiliate Disclosure</a>
+  </p>
+  <p>&copy; <script>document.write(new Date().getFullYear())</script> AI Tool Pick. All rights reserved.</p>
+</footer>
 
 <script>
 function newsletterSubmit(e){
