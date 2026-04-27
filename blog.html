@@ -9,14 +9,19 @@
 <meta name="description" content="Independent AI tool reviews for UK small businesses. Real GBP pricing, honest verdicts, no paid placements.">
 <meta name="robots" content="index, follow">
 <link rel="icon" type="image/svg+xml" href="/favicon-white-orange.svg">
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
 <link rel="canonical" href="https://aitoolpick.co.uk/blog.html">
 <meta property="og:title" content="AI Tool Reviews for UK Small Businesses | AI Tool Pick">
 <meta property="og:description" content="Independent AI tool reviews for UK small businesses. Real GBP pricing, honest verdicts, no paid placements.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://aitoolpick.co.uk/blog.html">
+<meta property="og:image" content="https://aitoolpick.co.uk/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="AI Tool Reviews for UK Small Businesses | AI Tool Pick">
 <meta name="twitter:description" content="Independent AI tool reviews for UK small businesses. Real GBP pricing, honest verdicts, no paid placements.">
+<meta name="twitter:image" content="https://aitoolpick.co.uk/og-image.png">
 
 
 
@@ -181,6 +186,7 @@ function siteSearch(query) {
 <nav>
   <div class="nav-inner">
     <a href="/" class="logo">AI Tool<span>Pick</span></a>
+    <button class="hamburger" id="nav-hamburger" aria-label="Open menu" onclick="document.querySelector('.nav-links').classList.toggle('open')"><span></span><span></span><span></span></button>
     <ul class="nav-links">
       <li><a href="/blog.html">Reviews</a></li>
       <li><a href="#categories">Categories</a></li>
@@ -393,71 +399,20 @@ function siteSearch(query) {
 
   </div>
 
-        <div class="blog-card">
-          <span class="blog-date">16 April 2026</span>
-          <h3><a href="https://aitoolpick.co.uk/jasper-ai-review-uk-2026.html">Jasper Ai Review 2026: Is It Worth It for UK Small Businesses?</a></h3>
-          <p class="blog-excerpt">Honest review of Jasper Ai for UK small businesses. Pricing, pros and cons, and our verdict.</p>
-        </div>
-    
-        <div class="blog-card">
-          <span class="blog-date">17 April 2026</span>
-          <h3><a href="https://aitoolpick.co.uk/copyai-review-uk-2026.html">Copyai Review 2026: Is It Worth It for UK Small Businesses?</a></h3>
-          <p class="blog-excerpt">Honest review of Copyai for UK small businesses. Pricing, pros and cons, and our verdict.</p>
-        </div>
+  <div class="block-spacer"></div>
+  <div class="section-divider"></div>
 
-    <div class="block-spacer"></div>
-    <div class="section-divider"></div>
+  <div class="section-label">Search</div>
+  <div class="section-title">Find a review</div>
+  <div style="max-width:600px;">
+    <form onsubmit="event.preventDefault();siteSearch(this.query.value);" style="display:flex;gap:10px;">
+      <input type="text" name="query" placeholder="e.g. Jasper, SEO, invoicing..." style="flex:1;padding:12px 16px;border:1px solid var(--border);border-radius:8px;font-family:inherit;font-size:14px;">
+      <button type="submit" style="background:var(--ink);color:var(--paper);border:none;border-radius:8px;padding:0 20px;font-weight:600;font-size:14px;cursor:pointer;">Search</button>
+    </form>
+    <p style="font-size:13px;color:var(--muted);margin-top:8px;">Searches all reviews on aitoolpick.co.uk via Google.</p>
+  </div>
 
-    <div class="section-label">Comparisons</div>
-    <div class="section-title">Tool vs Tool</div>
-    <div class="articles-grid">
-      </div>
-
-    <div class="block-spacer"></div>
-    <div class="section-divider"></div>
-
-    <div class="section-label">Is It Worth It?</div>
-    <div class="section-title">Cost Breakdowns</div>
-    <div class="articles-grid">
-      </div>
-
-    <div class="block-spacer"></div>
-    <div class="section-divider"></div>
-
-    <div class="section-label">By Industry</div>
-    <div class="section-title">AI Tools for Your Business</div>
-    <div class="articles-grid">
-      </div>
-
-    <div class="block-spacer"></div>
-    <div class="section-divider"></div>
-
-    <div class="section-label">By City</div>
-    <div class="section-title">AI Tools for Businesses Near You</div>
-    <div class="articles-grid">
-      </div>
-    
-        <div class="blog-card">
-          <span class="blog-date">20 April 2026</span>
-          <h3><a href="https://aitoolpick.co.uk/writer-review-uk-2026.html">Writer Review 2026: Is It Worth It for UK Small Businesses?</a></h3>
-          <p class="blog-excerpt">Honest review of Writer for UK small businesses. Pricing, pros and cons, and our verdict.</p>
-        </div>
-    
-        <div class="blog-card">
-          <span class="blog-date">22 April 2026</span>
-          <h3><a href="https://aitoolpick.co.uk/shopify-review-uk-2026.html">Shopify Review 2026: Is It Worth It for UK Small Businesses?</a></h3>
-          <p class="blog-excerpt">Honest review of Shopify for UK small businesses. Pricing, pros and cons, and our verdict.</p>
-        </div>
-    
-        <div class="blog-card">
-          <span class="blog-date">24 April 2026</span>
-          <h3><a href="https://aitoolpick.co.uk/quickbooks-review-uk-2026.html">Quickbooks Review 2026: Is It Worth It for UK Small Businesses?</a></h3>
-          <p class="blog-excerpt">Honest review of Quickbooks for UK small businesses. Pricing, pros and cons, and our verdict.</p>
-        </div>
-    </main>
-
-
-
+</main>
 
 <section class="newsletter-section" id="newsletter">
   <div class="newsletter-inner">
@@ -495,7 +450,7 @@ function siteSearch(query) {
       <div class="footer-col">
         <h4>Categories</h4>
         <ul>
-          <li><a href="/blog.html">Finance &amp; Banking</a></li>
+          <li><a href="/tide-business-account-review-2026.html">Finance &amp; Banking</a></li>
           <li><a href="/blog.html">SEO &amp; Marketing</a></li>
           <li><a href="/blog.html">Writing &amp; Content</a></li>
           <li><a href="/blog.html">General AI</a></li>
@@ -506,7 +461,7 @@ function siteSearch(query) {
         <ul>
           <li><a href="/affiliate-disclosure.html">Affiliate Disclosure</a></li>
           
-          <li><a href="mailto:morad37.marketing@gmail.com">Contact</a></li>
+          <li><a href="mailto:outreach@aitoolpick.co.uk">Contact</a></li>
         </ul>
       </div>
     </div>
@@ -518,59 +473,38 @@ function siteSearch(query) {
 </footer>
 
 <script>
-function subscribeNewsletter(e, form) {
-  e.preventDefault();
-  const email = form.querySelector('input[type="email"]').value;
-  const msg = document.getElementById('newsletter-msg');
-  const btn = form.querySelector('button');
-  btn.disabled = true;
-  btn.textContent = 'Subscribing...';
-  fetch('https://formsubmit.co/ajax/morad37.marketing@gmail.com', {
-    method: 'POST',
-    headers: {'Content-Type': 'application/json', 'Accept': 'application/json'},
-    body: JSON.stringify({email: email, _subject: 'AIToolpick Newsletter Signup', _template: 'table'})
-  }).then(r => {
-    if (r.ok) {
-      msg.textContent = '✓ Subscribed! Check your inbox.';
-      msg.style.color = '#1a6b3a';
-      form.querySelector('input').value = '';
-    } else {
-      msg.textContent = 'Something went wrong. Try again.';
-      msg.style.color = '#d4500a';
-    }
-    btn.disabled = false;
-    btn.textContent = 'Subscribe';
-  }).catch(() => {
-    msg.textContent = 'Network error. Try again.';
-    msg.style.color = '#d4500a';
-    btn.disabled = false;
-    btn.textContent = 'Subscribe';
-  });
-  return false;
-}
-document.querySelectorAll('.tab-btn').forEach(btn => {
-  btn.addEventListener('click', () => {
-    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
-    document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
-    btn.classList.add('active');
-    document.getElementById('tab-' + btn.dataset.tab).classList.add('active');
-  });
-});
-</script>
-
-<script>
 function newsletterSubmit(e){
-  // Form will submit to hidden_iframe in background
-  document.getElementById('newsletter-form').style.opacity='0.5';
-  document.getElementById('newsletter-form').style.pointerEvents='none';
-  setTimeout(function(){
-    document.getElementById('newsletter-form').style.display='none';
-    var note=document.getElementById('newsletter-note');
-    note.textContent="You're signed up. We'll email new posts and useful picks straight to your inbox.";
+  e.preventDefault();
+  var form = document.getElementById('newsletter-form');
+  var email = form.querySelector('input[name="EMAIL"]').value;
+  var note = document.getElementById('newsletter-note');
+  if(!email || !email.includes('@')){
+    note.textContent = 'Please enter a valid email address.';
+    note.style.color = '#d4500a';
+    return false;
+  }
+  form.style.opacity='0.5';
+  form.style.pointerEvents='none';
+  note.textContent = 'Subscribing...';
+  note.style.color = 'rgba(250,250,247,.55)';
+  var iframe = document.getElementById('hidden_iframe');
+  iframe.onload = function(){
+    form.style.display='none';
+    note.textContent="You're signed up. Check your inbox for confirmation.";
     note.style.color='var(--accent)';
     note.style.fontSize='16px';
     note.style.fontWeight='600';
-  }, 500);
+  };
+  setTimeout(function(){
+    if(form.style.display !== 'none'){
+      note.textContent = 'Something went wrong. Please try again.';
+      note.style.color = '#d4500a';
+      form.style.opacity='1';
+      form.style.pointerEvents='auto';
+    }
+  }, 8000);
+  form.submit();
+  return false;
 }
 </script>
 

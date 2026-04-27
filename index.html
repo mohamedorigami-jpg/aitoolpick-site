@@ -11,6 +11,9 @@
 <meta property="og:title" content="AI Tool Pick - Best AI Tools for UK Small Businesses">
 <meta property="og:description" content="Independent AI tool reviews for UK small businesses. Find the right AI software, compare pricing, and save time with honest recommendations.">
 <meta property="og:url" content="https://aitoolpick.co.uk">
+<meta property="og:image" content="https://aitoolpick.co.uk/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
 <link rel="icon" type="image/svg+xml" href="/favicon-white-orange.svg">
 <link rel="canonical" href="https://aitoolpick.co.uk/">
 <meta property="og:type" content="website">
@@ -187,6 +190,7 @@ function siteSearch(query) {
   window.open('https://www.google.com/search?q=site:aitoolpick.co.uk+' + encodeURIComponent(query), '_blank');
 }
 </script>
+<meta name="twitter:image" content="https://aitoolpick.co.uk/og-image.png">
 </head>
 <body>
 <nav>
@@ -206,11 +210,16 @@ function siteSearch(query) {
     <div class="hero-left">
       <div class="hero-eyebrow">Independent AI Reviews for UK Business</div>
       <h1>Find the right <em>AI tool</em> first time.</h1>
-      <p class="hero-desc">Honest, in-depth reviews of AI tools for UK small businesses. No hype, no paid placements - just clear recommendations that save you time and money.</p>
+      <p class="hero-desc">Honest, in-depth reviews of AI tools for UK small businesses. No hype, no paid placements – just clear recommendations that save you time and money.</p>
       <div class="hero-actions">
         <a href="/blog.html" class="btn-primary">Browse all reviews →</a>
         <a href="#categories" class="btn-secondary">Browse by category</a>
-      </div>
+      </div><div style="margin-top:16px;max-width:400px;">
+      <form onsubmit="event.preventDefault();siteSearch(this.query.value);" style="display:flex;gap:8px;">
+        <input type="text" name="query" placeholder="Search reviews..." style="flex:1;padding:10px 14px;border:1px solid var(--border);border-radius:8px;font-family:inherit;font-size:13px;background:var(--surface);">
+        <button type="submit" style="background:var(--ink);color:var(--paper);border:none;border-radius:8px;padding:0 16px;font-weight:600;font-size:13px;cursor:pointer;">Search</button>
+      </form>
+    </div>
     </div>
     <div class="hero-stats">
       <div class="stat-item">
@@ -237,8 +246,8 @@ function siteSearch(query) {
 <section class="featured-section">
   <div class="section-header">
     <div>
-      <div class="section-label">This week's picks</div>
-      <div class="section-title">Top AI tools for UK businesses</div>
+      <h2 class="section-label">This week's picks</h2>
+      <h3 class="section-title">Top AI tools for UK businesses</h3>
     </div>
     <a href="/blog.html" class="view-all">View all reviews →</a>
   </div>
@@ -247,7 +256,7 @@ function siteSearch(query) {
       <div class="tool-card-top"><div class="tool-icon">✍️</div><div class="tool-rating"><span class="stars">★★★★★</span>4.5</div></div>
       <div class="tool-name">Jasper AI</div>
       <div class="tool-tagline">The leading AI writing assistant for teams creating content at scale. Built-in SEO tools and brand voice training.</div>
-      <div class="tool-footer"><span class="tool-category">Writing</span><span class="tool-price">From £32/mo</span></div>
+      <div class="tool-footer"><span class="tool-category">Writing</span><span class="tool-price">From £39/mo</span></div>
     </a>
     <a href="/chatgpt-vs-claude-uk.html" class="tool-card">
       <div class="tool-card-top"><div class="tool-icon">🤖</div><div class="tool-rating"><span class="stars">★★★★☆</span>4.3</div></div>
@@ -279,7 +288,7 @@ function siteSearch(query) {
       <div class="tool-tagline">The most comprehensive SEO suite available. Keyword research, backlink analysis, and AI-assisted content.</div>
       <div class="tool-footer"><span class="tool-category">SEO</span><span class="tool-price">From ~£99/mo</span></div>
     </a>
-    <a href="https://www.awin1.com/cread.php?awinmid=125330&awinaffid=2814806&ued=https%3A%2F%2Fairies.app" target="_blank" rel="noopener" class="tool-card">
+    <a href="/airies-review-uk-2026.html" class="tool-card">
       <div class="tool-card-top"><div class="tool-icon">🎓</div><div class="tool-rating"><span class="stars">★★★★★</span>4.5</div></div>
       <div class="tool-name">Airies</div>
       <div class="tool-tagline">AI-powered learning platform that personalises training for your team. Upskill faster with adaptive lessons and progress tracking.</div>
@@ -292,7 +301,7 @@ function siteSearch(query) {
   <div class="review-card">
     <div>
       <div class="review-label">Full review</div>
-      <div class="review-title">Jasper AI: Is it worth £32/month for UK small businesses?</div>
+      <div class="review-title">Jasper AI: Is it worth £39/month for UK small businesses?</div>
       <div class="review-excerpt">We tested Jasper AI across 30 days of real content creation for a UK e-commerce brand. Here's what we found - the good, the bad, and whether the price is justified.</div>
       <a href="/best-ai-writing-tools-uk.html" class="btn-primary" style="font-size:12px;padding:9px 18px;">Read full review →</a>
     </div>
@@ -310,25 +319,25 @@ function siteSearch(query) {
 <section class="categories-section" id="categories">
   <div class="categories-inner">
     <div>
-      <div class="section-label">Browse by use case</div>
-      <div class="section-title">What do you need AI for?</div>
+      <h2 class="section-label">Browse by use case</h2>
+      <h3 class="section-title">What do you need AI for?</h3>
     </div>
     <div class="categories-grid">
       <a href="/best-ai-writing-tools-uk.html" class="category-card"><div class="category-emoji">✍️</div><div class="category-name">Writing & Content</div><div class="category-count">2 articles</div></a>
       <a href="/fathom-ai-review-uk-2026.html" class="category-card"><div class="category-emoji">📊</div><div class="category-name">Productivity</div><div class="category-count">5 articles</div></a>
-      <a href="/blog.html" class="category-card" style="opacity:0.5;pointer-events:none"><div class="category-emoji">🎨</div><div class="category-name">Design & Creative</div><div class="category-count">Coming soon</div></a>
+      <div class="category-card" style="opacity:0.5;cursor:default"><div class="category-emoji">🎨</div><div class="category-name">Design & Creative</div><div class="category-count">Coming soon</div></div>
       <a href="/best-ai-tools-for-recruiters-uk-2026.html" class="category-card"><div class="category-emoji">📧</div><div class="category-name">Sales & Outreach</div><div class="category-count">1 article</div></a>
       <a href="/best-ai-seo-tools-uk.html" class="category-card"><div class="category-emoji">🔍</div><div class="category-name">SEO & Marketing</div><div class="category-count">1 article</div></a>
       <a href="/tide-business-account-review-2026.html" class="category-card"><div class="category-emoji">💰</div><div class="category-name">Finance & Banking</div><div class="category-count">4 articles</div></a>
-      <a href="/blog.html" class="category-card" style="opacity:0.5;pointer-events:none"><div class="category-emoji">🤝</div><div class="category-name">Customer Service</div><div class="category-count">Coming soon</div></a>
-      <a href="/blog.html" class="category-card" style="opacity:0.5;pointer-events:none"><div class="category-emoji">💻</div><div class="category-name">Development</div><div class="category-count">Coming soon</div></a>
+      <div class="category-card" style="opacity:0.5;cursor:default"><div class="category-emoji">🤝</div><div class="category-name">Customer Service</div><div class="category-count">Coming soon</div></div>
+      <div class="category-card" style="opacity:0.5;cursor:default"><div class="category-emoji">💻</div><div class="category-name">Development</div><div class="category-count">Coming soon</div></div>
     </div>
   </div>
 </section>
 
 <section class="articles-section">
   <div class="section-header">
-    <div><div class="section-label">Latest</div><div class="section-title">Fresh from the site</div></div>
+    <div><h2 class="section-label">Latest</h2><h3 class="section-title">Fresh from the site</h3></div>
     <a href="/blog.html" class="view-all">See all →</a>
   </div>
   <div class="tab-switcher">
@@ -357,12 +366,12 @@ function siteSearch(query) {
       <div class="article-arrow">→</div>
     </a>
     <a href="/best-ai-writing-tools-uk.html" class="article-row">
-      <div class="article-num">03</div>
+      <div class="article-num">05</div>
       <div><div class="article-title">Best AI Writing Tools for UK Small Businesses 2026</div><div class="article-meta"><span class="article-tag">Writing</span><span>16 Mar 2026</span><span>10 min read</span></div></div>
       <div class="article-arrow">→</div>
     </a>
     <a href="/best-ai-seo-tools-uk.html" class="article-row">
-      <div class="article-num">04</div>
+      <div class="article-num">06</div>
       <div><div class="article-title">Best AI SEO Tools for UK Small Businesses 2026</div><div class="article-meta"><span class="article-tag">SEO</span><span>23 Mar 2026</span><span>12 min read</span></div></div>
       <div class="article-arrow">→</div>
     </a>
@@ -372,14 +381,11 @@ function siteSearch(query) {
       <div class="article-arrow">→</div>
     </a>
     <a href="/best-ai-tools-for-accountants-2026.html" class="article-row">
-      <div class="article-num">05</div>
+      <div class="article-num">08</div>
       <div><div class="article-title">Best AI Tools for UK Accountants: Save Hours on Bookkeeping</div><div class="article-meta"><span class="article-tag">Finance</span><span>30 Mar 2026</span><span>8 min read</span></div></div>
       <div class="article-arrow">→</div>
     </a>
-    
-      <div><div class="article-title">Best AI Tools for Accountants in the UK (2026)</div><div class="article-meta"><span class="article-tag">Finance</span><span>24 Apr 2026</span><span>8 min read</span></div></div>
-      <div class="article-arrow">→</div>
-    </a>
+
   </div>
   <div id="tab-finance" class="tab-content">
     <a href="/tide-business-account-review-2026.html" class="article-row">
@@ -400,8 +406,8 @@ function siteSearch(query) {
 
 <section class="newsletter-section" id="newsletter">
   <div class="newsletter-inner">
-    <div class="newsletter-label">Stay informed</div>
-    <div class="newsletter-title">Weekly AI tool picks for UK businesses</div>
+    <h2 class="newsletter-label">Stay informed</h2>
+    <h3 class="newsletter-title">Weekly AI tool picks for UK businesses</h3>
     <div class="newsletter-desc">One email a week. The best new AI tools, honest reviews, and money-saving tips - curated for UK small businesses.</div>
     <form class="newsletter-form" id="newsletter-form" method="POST" action="https://3cc19776.sibforms.com/serve/MUIFAOofIPWDC7p6ZNYA_lBDbGD7TXnmtRi6_C60iaM1Rq8RUYlQVOcm4IaKwQvoMYP4HPqTBS3XtCcKmUsVbjSjgtXbfWDuMKJydKD8v8U124pilWNiidY07SFTq4kT6HHD4-f2YmSBHnNWoLN2HmSTOPQiSDrfWBajIwUNN9KqvoQIGq5N6YFV3C1q1NwWIGb1DSRzsjTqNwOYvg==" target="hidden_iframe" onsubmit="newsletterSubmit(event)">
       <input type="email" name="EMAIL" class="newsletter-input" placeholder="your@email.co.uk" required>
@@ -428,11 +434,11 @@ function siteSearch(query) {
       </div>
       <div class="footer-col">
         <h4>Categories</h4>
-        <ul><li><a href="/blog.html">Finance & Banking</a></li><li><a href="/blog.html">Sales & Outreach</a></li><li><a href="/blog.html">Design</a></li><li><a href="/blog.html">Development</a></li></ul>
+        <ul><li><a href="/tide-business-account-review-2026.html">Finance & Banking</a></li><li><a href="/best-ai-tools-for-recruiters-uk-2026.html">Sales & Outreach</a></li><li><a href="/best-ai-presentation-tools-uk-2026.html">Design</a></li><li><a href="/best-ai-tools-for-uk-startups-2026.html">Development</a></li></ul>
       </div>
       <div class="footer-col">
         <h4>Site</h4>
-        <ul><li><a href="/affiliate-disclosure.html">Affiliate Disclosure</a></li><li><a href="/privacy-policy.html">Privacy Policy</a></li><li><a href="mailto:morad37.marketing@gmail.com">Contact</a></li></ul>
+        <ul><li><a href="/affiliate-disclosure.html">Affiliate Disclosure</a></li><li><a href="/privacy-policy.html">Privacy Policy</a></li><li><a href="mailto:outreach@aitoolpick.co.uk">Contact</a></li></ul>
       </div>
     </div>
     <div class="footer-bottom">
@@ -454,35 +460,46 @@ document.querySelectorAll('.tab-btn').forEach(btn => {
 </script>
 
 <script>
-fetch('/sitemap.xml').then(r=>r.text()).then(xml=>{
-  const count=(xml.match(/<loc>/g)||[]).length;
-  const el=document.querySelector('.stat-number');
-  if(el)el.textContent=count+'+';
-}).catch(()=>{});
-</script>
-
-<script>
 function newsletterSubmit(e){
-  document.getElementById('newsletter-form').style.opacity='0.5';
-  document.getElementById('newsletter-form').style.pointerEvents='none';
-  setTimeout(function(){
-    document.getElementById('newsletter-form').style.display='none';
-    var note=document.getElementById('newsletter-note');
-    note.textContent="You're signed up. We'll email new posts and useful picks straight to your inbox.";
+  e.preventDefault();
+  var form = document.getElementById('newsletter-form');
+  var email = form.querySelector('input[name="EMAIL"]').value;
+  var note = document.getElementById('newsletter-note');
+  if(!email || !email.includes('@')){
+    note.textContent = 'Please enter a valid email address.';
+    note.style.color = '#d4500a';
+    return false;
+  }
+  form.style.opacity='0.5';
+  form.style.pointerEvents='none';
+  note.textContent = 'Subscribing...';
+  note.style.color = 'rgba(250,250,247,.55)';
+  var iframe = document.getElementById('hidden_iframe');
+  iframe.onload = function(){
+    form.style.display='none';
+    note.textContent="You're signed up. Check your inbox for confirmation.";
     note.style.color='var(--accent)';
     note.style.fontSize='16px';
     note.style.fontWeight='600';
-  }, 500);
+  };
+  setTimeout(function(){
+    if(form.style.display !== 'none'){
+      note.textContent = 'Something went wrong. Please try again.';
+      note.style.color = '#d4500a';
+      form.style.opacity='1';
+      form.style.pointerEvents='auto';
+    }
+  }, 8000);
+  form.submit();
+  return false;
 }
 </script>
-
 
 <script>
 fetch('/sitemap.xml').then(r=>r.text()).then(xml=>{
   const count=(xml.match(/<loc>/g)||[]).length;
-  const nice=Math.max(25,Math.floor(count/25)*25);
   const el=document.getElementById('article-count');
-  if(el)el.textContent=nice+'+';
+  if(el)el.textContent=count;
 }).catch(()=>{});
 </script>
 </body>
