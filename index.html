@@ -153,7 +153,7 @@ footer{background:var(--paper);border-top:1px solid var(--border);padding:clamp(
 @media(max-width:900px){.hero{grid-template-columns:1fr}.tools-grid{grid-template-columns:1fr 1fr}.review-card{grid-template-columns:1fr}.categories-grid{grid-template-columns:repeat(2,1fr)}.footer-top{grid-template-columns:1fr 1fr}}
 .hamburger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:8px}
 .hamburger span{display:block;width:20px;height:2px;background:var(--ink);border-radius:2px;transition:all .2s}
-@media(max-width:600px){.nav-links{display:none}.nav-links.open{display:flex;flex-direction:column;position:absolute;top:58px;right:0;left:0;background:rgba(250,250,247,0.97);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);padding:16px clamp(16px,4vw,48px);gap:16px;z-index:99}.hamburger{display:flex}.tools-grid{grid-template-columns:1fr}.categories-grid{grid-template-columns:1fr 1fr}.newsletter-form{flex-direction:column}.footer-top{grid-template-columns:1fr}.article-row{grid-template-columns:48px 1fr}.article-arrow{display:none}}
+@media(max-width:600px){.nav-links{display:none}.nav-links.open{display:flex;flex-direction:column;position:absolute;top:58px;right:0;left:0;background:var(--paper);border-bottom:1px solid var(--border);padding:16px clamp(16px,4vw,48px);gap:16px;z-index:99}.hamburger{display:flex}.tools-grid{grid-template-columns:1fr}.categories-grid{grid-template-columns:1fr 1fr}.newsletter-form{flex-direction:column}.footer-top{grid-template-columns:1fr}.article-row{grid-template-columns:48px 1fr}.article-arrow{display:none}}
 </style>
   <script type="application/ld+json">
   {
@@ -181,6 +181,12 @@ footer{background:var(--paper);border-top:1px solid var(--border);padding:clamp(
   }
   </script>
 <link rel="apple-touch-icon" href="/favicon-white-orange.svg">
+<script>
+function siteSearch(query) {
+  if (!query) return;
+  window.open('https://www.google.com/search?q=site:aitoolpick.co.uk+' + encodeURIComponent(query), '_blank');
+}
+</script>
 </head>
 <body>
 <nav>
@@ -199,7 +205,7 @@ footer{background:var(--paper);border-top:1px solid var(--border);padding:clamp(
   <div class="hero">
     <div class="hero-left">
       <div class="hero-eyebrow">Independent AI Reviews for UK Business</div>
-      <h1>Find the right<br><em>AI tool</em><br>first time.</h1>
+      <h1>Find the right <em>AI tool</em> first time.</h1>
       <p class="hero-desc">Honest, in-depth reviews of AI tools for UK small businesses. No hype, no paid placements - just clear recommendations that save you time and money.</p>
       <div class="hero-actions">
         <a href="/blog.html" class="btn-primary">Browse all reviews →</a>
@@ -208,13 +214,13 @@ footer{background:var(--paper);border-top:1px solid var(--border);padding:clamp(
     </div>
     <div class="hero-stats">
       <div class="stat-item">
-        <div class="stat-number" id="article-count">50+</div>
-        <div class="stat-label">Articles published</div>
+        <div class="stat-number" id="article-count">23</div>
+        <div class="stat-label">Reviews published</div>
         <div class="stat-badge">↑ New reviews weekly</div>
       </div>
       <div class="stat-item">
         <div class="stat-number">£0</div>
-        <div class="stat-label">Cost to read</div>
+        <div class="stat-label">Updated weekly</div>
         <div class="stat-badge">Always free</div>
       </div>
       <div class="stat-item">
@@ -308,14 +314,14 @@ footer{background:var(--paper);border-top:1px solid var(--border);padding:clamp(
       <div class="section-title">What do you need AI for?</div>
     </div>
     <div class="categories-grid">
-      <a href="/blog.html" class="category-card"><div class="category-emoji">✍️</div><div class="category-name">Writing & Content</div><div class="category-count">2 articles</div></a>
-      <a href="/blog.html" class="category-card"><div class="category-emoji">📊</div><div class="category-name">Productivity</div><div class="category-count">5 articles</div></a>
-      <a href="/blog.html" class="category-card"><div class="category-emoji">🎨</div><div class="category-name">Design & Creative</div><div class="category-count">0 articles</div></a>
-      <a href="/blog.html" class="category-card"><div class="category-emoji">📧</div><div class="category-name">Sales & Outreach</div><div class="category-count">1 article</div></a>
-      <a href="/blog.html" class="category-card"><div class="category-emoji">🔍</div><div class="category-name">SEO & Marketing</div><div class="category-count">1 article</div></a>
-      <a href="/blog.html" class="category-card"><div class="category-emoji">💰</div><div class="category-name">Finance & Banking</div><div class="category-count">4 articles</div></a>
-      <a href="/blog.html" class="category-card"><div class="category-emoji">🤝</div><div class="category-name">Customer Service</div><div class="category-count">0 articles</div></a>
-      <a href="/blog.html" class="category-card"><div class="category-emoji">💻</div><div class="category-name">Development</div><div class="category-count">0 articles</div></a>
+      <a href="/best-ai-writing-tools-uk.html" class="category-card"><div class="category-emoji">✍️</div><div class="category-name">Writing & Content</div><div class="category-count">2 articles</div></a>
+      <a href="/fathom-ai-review-uk-2026.html" class="category-card"><div class="category-emoji">📊</div><div class="category-name">Productivity</div><div class="category-count">5 articles</div></a>
+      <a href="/blog.html" class="category-card" style="opacity:0.5;pointer-events:none"><div class="category-emoji">🎨</div><div class="category-name">Design & Creative</div><div class="category-count">Coming soon</div></a>
+      <a href="/best-ai-tools-for-recruiters-uk-2026.html" class="category-card"><div class="category-emoji">📧</div><div class="category-name">Sales & Outreach</div><div class="category-count">1 article</div></a>
+      <a href="/best-ai-seo-tools-uk.html" class="category-card"><div class="category-emoji">🔍</div><div class="category-name">SEO & Marketing</div><div class="category-count">1 article</div></a>
+      <a href="/tide-business-account-review-2026.html" class="category-card"><div class="category-emoji">💰</div><div class="category-name">Finance & Banking</div><div class="category-count">4 articles</div></a>
+      <a href="/blog.html" class="category-card" style="opacity:0.5;pointer-events:none"><div class="category-emoji">🤝</div><div class="category-name">Customer Service</div><div class="category-count">Coming soon</div></a>
+      <a href="/blog.html" class="category-card" style="opacity:0.5;pointer-events:none"><div class="category-emoji">💻</div><div class="category-name">Development</div><div class="category-count">Coming soon</div></a>
     </div>
   </div>
 </section>
@@ -341,12 +347,12 @@ footer{background:var(--paper);border-top:1px solid var(--border);padding:clamp(
       <div class="article-arrow">→</div>
     </a>
     <a href="/mindbody-review-uk-2026.html" class="article-row">
-      <div class="article-num">01</div>
+      <div class="article-num">03</div>
       <div><div class="article-title">Mindbody Review 2026: Is It Worth It for UK Small Businesses?</div><div class="article-meta"><span class="article-tag">Fitness</span><span>7 Apr 2026</span><span>5 min read</span></div></div>
       <div class="article-arrow">→</div>
     </a>
     <a href="/airies-review-uk-2026.html" class="article-row">
-      <div class="article-num">02</div>
+      <div class="article-num">04</div>
       <div><div class="article-title">Airies Review 2026: The AI Learning Platform Trusted by Oxford and LSE</div><div class="article-meta"><span class="article-tag">Learning</span><span>24 Mar 2026</span><span>7 min read</span></div></div>
       <div class="article-arrow">→</div>
     </a>
@@ -361,7 +367,7 @@ footer{background:var(--paper);border-top:1px solid var(--border);padding:clamp(
       <div class="article-arrow">→</div>
     </a>
     <a href="/chatgpt-vs-claude-uk.html" class="article-row">
-      <div class="article-num">04</div>
+      <div class="article-num">07</div>
       <div><div class="article-title">ChatGPT vs Claude: Which Is Better for UK Small Businesses in 2026?</div><div class="article-meta"><span class="article-tag">General AI</span><span>23 Mar 2026</span><span>9 min read</span></div></div>
       <div class="article-arrow">→</div>
     </a>
@@ -370,8 +376,7 @@ footer{background:var(--paper);border-top:1px solid var(--border);padding:clamp(
       <div><div class="article-title">Best AI Tools for UK Accountants: Save Hours on Bookkeeping</div><div class="article-meta"><span class="article-tag">Finance</span><span>30 Mar 2026</span><span>8 min read</span></div></div>
       <div class="article-arrow">→</div>
     </a>
-    <a href="/best-ai-tools-for-accountants-uk-2026.html" class="article-row">
-      <div class="article-num">06</div>
+    
       <div><div class="article-title">Best AI Tools for Accountants in the UK (2026)</div><div class="article-meta"><span class="article-tag">Finance</span><span>24 Apr 2026</span><span>8 min read</span></div></div>
       <div class="article-arrow">→</div>
     </a>
