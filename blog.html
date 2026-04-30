@@ -50,9 +50,11 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
+@media(prefers-color-scheme:dark){:root{--ink:#e8e6e1;--paper:#1a1a1c;--cream:#222226;--accent:#e86a2a;--accent2:#3cb85c;--muted:#9a9a9a;--border:#333336;--surface:#242428}}
 :root{--ink:#0f0f0f;--paper:#fafaf7;--cream:#f4f0e8;--accent:#d4500a;--accent2:#1a6b3a;--muted:#6b6b6b;--border:#e2ddd4;--surface:#ffffff}
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
+button:focus-visible{outline:2px solid var(--accent);outline-offset:2px}a:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
 body{background:var(--paper);color:var(--ink);font-family:'DM Sans',sans-serif;font-weight:400;line-height:1.6;-webkit-font-smoothing:antialiased}
 
 /* Nav - identical to index.html */

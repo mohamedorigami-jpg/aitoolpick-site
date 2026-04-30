@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en-GB">
 <head>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <meta name="google-adsense-account" content="ca-pub-8571190031949919">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8571190031949919" crossorigin="anonymous"></script>
 <meta charset="UTF-8">
@@ -64,8 +66,12 @@
 }
 </script>
 <style>
+@media(prefers-color-scheme:dark){:root{--ink:#e8e6e1;--paper:#1a1a1c;--cream:#222226;--accent:#e86a2a;--accent2:#3cb85c;--muted:#9a9a9a;--border:#333336;--surface:#242428;--paper-rgb:26,26,28}}
 :root{--ink:#0f0f0f;--paper:#fafaf7;--cream:#f4f0e8;--accent:#d4500a;--accent2:#1a6b3a;--muted:#6b6b6b;--border:#e2ddd4;--surface:#ffffff}
 *{box-sizing:border-box;margin:0;padding:0}
+*,*::before,*::after{transition:background .2s,color .15s,border-color .2s,box-shadow .2s}
+button:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+a:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
 body{background:var(--paper);color:var(--ink);font-family:'DM Sans',sans-serif;line-height:1.7;font-weight:300;-webkit-font-smoothing:antialiased}
 nav{position:sticky;top:0;z-index:100;background:rgba(250,250,247,0.98);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);padding:0 clamp(16px,4vw,48px)}
 .nav-inner{max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:56px}
@@ -261,7 +267,7 @@ html,body{overflow-x:hidden;width:100%;max-width:100vw}body{word-break:break-wor
 
   <div class="article-eyebrow">Learning Platform Review</div>
   <h1>Airies Review 2026: The AI Learning Platform Trusted by Oxford and LSE</h1>
-<img src="/og-image.png" alt="Airies review featured image" style="width:100%;max-width:100%;border-radius:12px;margin-bottom:24px;display:block;">
+<img loading="lazy" src="/og-image.png" alt="Airies review featured image" style="width:100%;max-width:100%;border-radius:12px;margin-bottom:24px;display:block;">
   <div class="article-meta">
     <span class="meta-tag">Review</span>
     <span>Updated 24 March 2026</span>
