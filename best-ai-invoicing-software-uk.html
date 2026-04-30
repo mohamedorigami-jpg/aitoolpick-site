@@ -141,6 +141,8 @@
 
 <style>
 @media(prefers-color-scheme:dark){:root{--ink:#e8e6e1;--paper:#1a1a1c;--cream:#222226;--accent:#e86a2a;--accent2:#3cb85c;--muted:#9a9a9a;--border:#333336;--surface:#242428}}
+.dark{:root{--ink:#e8e6e1;--paper:#1a1a1c;--cream:#222226;--accent:#e86a2a;--accent2:#3cb85c;--muted:#9a9a9a;--border:#333336;--surface:#242428}}
+.theme-toggle{display:flex;align-items:center;justify-content:center;width:32px;height:32px;border:none;background:none;cursor:pointer;font-size:18px;border-radius:50%;transition:all .2s;color:var(--muted)}.theme-toggle:hover{background:var(--cream);color:var(--ink)}
 :root{--ink:#0f0f0f;--paper:#fafaf7;--cream:#f4f0e8;--accent:#d4500a;--accent2:#1a6b3a;--muted:#6b6b6b;--border:#e2ddd4;--surface:#ffffff}
 *{box-sizing:border-box;margin:0;padding:0}
 *,*::before,*::after{transition:background .2s,color .15s,border-color .2s,box-shadow .2s}
@@ -873,5 +875,9 @@ function newsletterSubmit(e){
 </script>
 
 
+
+<script>
+function toggleTheme(){var html=document.documentElement;html.classList.toggle('dark');localStorage.setItem('theme',html.classList.contains('dark')?'dark':'light');document.getElementById('theme-toggle').textContent=html.classList.contains('dark')?'☀':'☾'}(function(){if(localStorage.getItem('theme')==='dark'||(!localStorage.getItem('theme')&&window.matchMedia('(prefers-color-scheme:dark)').matches)){document.documentElement.classList.add('dark');document.getElementById('theme-toggle').textContent='☀'}})()
+</script>
 </body>
 </html>
