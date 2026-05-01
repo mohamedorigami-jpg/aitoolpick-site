@@ -113,10 +113,29 @@ body{word-break:break-word;overflow-wrap:break-word}table th,table td{word-break
 </style>
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <meta name="twitter:image" content="https://aitoolpick.co.uk/og-image.png">
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-PZQQ8VR469"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-PZQQ8VR469');
+</script>
 </head>
 <body>
 <div style="background:var(--surface)3cd;border:1px solid #ffc107;color:#856404;padding:12px 16px;text-align:center;font-size:14px;margin-bottom:20px">This quiz is currently being rebuilt. Check back soon for the full experience.</div>
-<nav><div class="nav-inner"><a href="https://aitoolpick.co.uk" class="logo">AI Tool Pick<span>.</span></a><a href="https://aitoolpick.co.uk/blog.html" style="font-size:13px;color:var(--muted);text-decoration:none">← All Reviews</a></div></nav>
+<nav>
+  <div class="nav-inner">
+    <a href="/" class="logo">AI Tool<span>Pick</span></a>
+    <button class="hamburger" id="nav-hamburger" aria-label="Open menu" onclick="document.querySelector('.nav-links').classList.toggle('open')"><span></span><span></span><span></span></button>
+    <ul class="nav-links">
+      <li><a href="/blog.html">Reviews</a></li>
+      <li><a href="/blog.html#categories">Categories</a></li>
+      <li><a href="/blog.html#newsletter" class="nav-cta">Get updates</a></li>
+    </ul>
+  </div>
+</nav>
 
 <section class="hero">
   <h1>Find the Right AI Tool in 60 Seconds</h1>
@@ -213,9 +232,17 @@ body{word-break:break-word;overflow-wrap:break-word}table th,table td{word-break
   </div>
 </div>
 
-<footer>
-  <p><a href="/">AI Tool Pick</a> | <a href="/blog.html">All Reviews</a> | <a href="/about.html">About</a> | <a href="/affiliate-disclosure.html">Affiliate Disclosure</a> | <a href="/privacy-policy.html">Privacy Policy</a> | <a href="/terms.html">Terms</a> | <a href="/contact.html">Contact</a></p>
-  <p style="margin-top:8px">&copy; 2026 AI Tool Pick. All rights reserved.</p>
+<footer style="border-top:1px solid var(--border);padding:20px clamp(16px,4vw,48px);text-align:center;font-size:12px;color:var(--muted)">
+  <p style="margin-bottom:8px">
+    <a href="/" style="color:var(--muted);text-decoration:none">AI Tool Pick</a> &nbsp;&middot;&nbsp;
+    <a href="/blog.html" style="color:var(--muted)">All Reviews</a> &nbsp;&middot;&nbsp;
+    <a href="/about.html" style="color:var(--muted)">About</a> &nbsp;&middot;&nbsp;
+    <a href="/contact.html" style="color:var(--muted)">Contact</a> &nbsp;&middot;&nbsp;
+    <a href="/privacy-policy.html" style="color:var(--muted)">Privacy Policy</a> &nbsp;&middot;&nbsp;
+    <a href="/terms.html" style="color:var(--muted)">Terms</a> &nbsp;&middot;&nbsp;
+    <a href="/affiliate-disclosure.html" style="color:var(--muted)">Affiliate Disclosure</a>
+  </p>
+  <p>&copy; <script>document.write(new Date().getFullYear())</script> AI Tool Pick. All rights reserved.</p>
 </footer>
 
 <script>
