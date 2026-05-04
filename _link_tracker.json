@@ -1,4 +1,13 @@
 {
-  "used_links": [],
-  "published_articles": []
+  "used_links": [
+    "Chatbase"
+  ],
+  "published_articles": [
+    {
+      "tool": "Chatbase",
+      "slug": "chatbase-review-uk-2026",
+      "file": "chatbase-review-uk-2026.html",
+      "published_at": "2026-05-04T07:06:41.285739"
+    }
+  ]
 }
