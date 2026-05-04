@@ -29,8 +29,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Best AI Tools for UK Startups 2026: The Founder Stack</title>
 
-
-
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -141,9 +139,17 @@
 }
 </script>
 
-
 <style>
 :root{--ink:#0f0f0f;--paper:#fafaf7;--cream:#f4f0e8;--accent:#d4500a;--accent2:#1a6b3a;--muted:#6b6b6b;--border:#e2ddd4;--surface:#f5f2eb}
+html{scroll-behavior:smooth}
+::selection{background:var(--accent);color:#fff}
+.key-box{transition:transform .15s,box-shadow .15s}
+.key-box:hover{transform:translateY(-1px);box-shadow:0 4px 12px rgba(0,0,0,.06)}
+.article-main a{color:var(--accent);text-decoration:none;border-bottom:1px solid rgba(212,80,10,.25);transition:border-color .15s}
+.article-main a:hover{border-bottom-color:var(--accent)}
+.affiliate-box{transition:transform .15s,box-shadow .15s}
+.affiliate-box:hover{transform:translateY(-1px);box-shadow:0 4px 16px rgba(212,80,10,.08)}
+html{overflow-x:hidden}
 *{box-sizing:border-box;margin:0;padding:0}
 *,*::before,*::after{transition:background .2s,color .15s,border-color .2s,box-shadow .2s}
 button:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
@@ -226,7 +232,6 @@ p{font-size:15px;color:var(--ink);margin-bottom:14px;font-weight:300}
 .related-links{display:flex;flex-direction:column;gap:8px;margin-top:16px}
 .related-link{font-size:13px;color:var(--accent);text-decoration:none;font-weight:400}
 .related-link:hover{text-decoration:underline}
-
 
 html,body{overflow-x:hidden;width:100%;max-width:100vw}body{word-break:break-word;overflow-wrap:break-word}table th,table td{word-break:normal;overflow-wrap:normal}table th,.price-table th,.price-table td,.comparison-table th{white-space:nowrap}img,video,iframe{max-width:100%;height:auto}@media(max-width:768px){table th,table td{white-space:nowrap}.article-layout{grid-template-columns:1fr;gap:24px}.article-sidebar{display:none}.article-main{min-width:0}.pros-cons{grid-template-columns:1fr}.score-overview{grid-template-columns:1fr;gap:16px;padding:20px}.score-big{font-size:60px}.score-row-label{width:auto;min-width:80px}.discount-box{flex-direction:column;text-align:center;gap:8px;align-items:stretch}.article-meta{flex-wrap:wrap;gap:8px}.nav-inner{flex-wrap:wrap;height:auto;min-height:56px}.vs-panel{grid-template-columns:1fr;text-align:center;gap:16px}.vs-side:first-child,.vs-side:last-child{text-align:center}.vs-badge{display:none}.tool-card-header{flex-direction:column}.comparison-table,table,.price-table{display:block;overflow-x:auto;-webkit-overflow-scrolling:touch;max-width:100%}h1,h2,h3,h4{word-break:break-word;overflow-wrap:break-word}pre,code{white-space:pre-wrap;word-break:break-word}.article-intro,p,li{overflow-wrap:break-word;word-break:break-word}}
 
@@ -521,7 +526,7 @@ html,body{overflow-x:hidden;width:100%;max-width:100vw}body{word-break:break-wor
   </div>
   <div class="sidebar-card" style="background:var(--ink);border-color:var(--ink)">
     <div class="sidebar-title" style="color:rgba(250,250,247,.5)">Newsletter</div>
-    <p style="font-size:13px;color:rgba(250,250,247,.7);margin-bottom:12px;font-weight:300">Weekly AI tool picks for UK businesses. Free.</p>
+    <p>Weekly AI tool picks for UK businesses. Free.</p>
     <a href="/#newsletter" class="cta-btn" style="background:var(--accent);width:100%;justify-content:center;font-size:12px;padding:9px 16px">Subscribe free</a>
   </div>
   <div class="sidebar-card">
@@ -556,7 +561,6 @@ html,body{overflow-x:hidden;width:100%;max-width:100vw}body{word-break:break-wor
   </div>
   <p>&copy; <script>document.write(new Date().getFullYear())</script> AI Tool Pick</p>
 </footer>
-
 
 <script>
 function newsletterSubmit(e){
@@ -594,7 +598,9 @@ function newsletterSubmit(e){
 }
 </script>
 
-
-
+<button id="btt" aria-label="Back to top" style="position:fixed;bottom:24px;right:24px;width:40px;height:40px;border-radius:50%;background:var(--ink);color:var(--paper);border:none;cursor:pointer;opacity:0;transform:translateY(10px);transition:opacity .25s,transform .25s;z-index:99;font-size:16px;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 8px rgba(0,0,0,.15)">&#8593;</button>
+<script>
+(function(){var b=document.getElementById('btt');if(!b)return;window.addEventListener('scroll',function(){if(window.scrollY>600){b.style.opacity='1';b.style.transform='translateY(0)'}else{b.style.opacity='0';b.style.transform='translateY(10px)'}});b.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'})})})();
+</script>
 </body>
 </html>

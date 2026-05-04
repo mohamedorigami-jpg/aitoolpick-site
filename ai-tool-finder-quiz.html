@@ -20,8 +20,6 @@
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 
-
-
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -67,6 +65,15 @@
 </script>
 <style>
 :root{--ink:#0f0f0f;--paper:#fafaf7;--cream:#f4f0e8;--accent:#d4500a;--accent2:#1a6b3a;--muted:#6b6b6b;--border:#e2ddd4;--surface:#f5f2eb}
+html{scroll-behavior:smooth}
+::selection{background:var(--accent);color:#fff}
+.key-box{transition:transform .15s,box-shadow .15s}
+.key-box:hover{transform:translateY(-1px);box-shadow:0 4px 12px rgba(0,0,0,.06)}
+.article-main a{color:var(--accent);text-decoration:none;border-bottom:1px solid rgba(212,80,10,.25);transition:border-color .15s}
+.article-main a:hover{border-bottom-color:var(--accent)}
+.affiliate-box{transition:transform .15s,box-shadow .15s}
+.affiliate-box:hover{transform:translateY(-1px);box-shadow:0 4px 16px rgba(212,80,10,.08)}
+html{overflow-x:hidden}
 *{box-sizing:border-box;margin:0;padding:0}
 body{background:var(--paper);color:var(--ink);font-family:'DM Sans',sans-serif;line-height:1.6;font-weight:300;-webkit-font-smoothing:antialiased;-webkit-text-size-adjust:100%;text-size-adjust:100%}
 nav{position:sticky;top:0;z-index:100;background:rgba(250,250,247,0.98);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);padding:0 clamp(16px,4vw,48px)}
@@ -354,8 +361,6 @@ function newsletterSubmit(e){
   }, 500);
 }
 </script>
-
-
 
 </body>
 </html>
