@@ -1,7 +1,8 @@
 {
   "used_links": [
     "Chatbase",
-    "Fillout"
+    "Fillout",
+    "Testimonial"
   ],
   "published_articles": [
     {
@@ -15,6 +16,12 @@
       "slug": "fillout-review-uk-2026",
       "file": "fillout-review-uk-2026.html",
       "published_at": "2026-05-06T07:04:35.489947"
+    },
+    {
+      "tool": "Testimonial",
+      "slug": "testimonial-review-uk-2026",
+      "file": "testimonial-review-uk-2026.html",
+      "published_at": "2026-05-07T12:09:09.462363"
     }
   ]
 }
