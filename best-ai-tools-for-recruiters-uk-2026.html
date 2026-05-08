@@ -653,41 +653,7 @@ html,body{overflow-x:hidden;width:100%;max-width:100vw}body{word-break:break-wor
   </div>
 </section>
 
-<script>
-function newsletterSubmit(e){
-  e.preventDefault();
-  var form = document.getElementById('newsletter-form');
-  var email = form.querySelector('input[name="EMAIL"]').value;
-  var note = document.getElementById('newsletter-note');
-  if(!email || !email.includes('@')){
-    note.textContent = 'Please enter a valid email address.';
-    note.style.color = '#d4500a';
-    return false;
-  }
-  form.style.opacity='0.5';
-  form.style.pointerEvents='none';
-  note.textContent = 'Subscribing...';
-  note.style.color = 'var(--muted)';
-  var iframe = document.getElementById('hidden_iframe');
-  iframe.onload = function(){
-    form.style.display='none';
-    note.textContent="You're signed up. Check your inbox for confirmation.";
-    note.style.color='var(--accent)';
-    note.style.fontSize='16px';
-    note.style.fontWeight='600';
-  };
-  setTimeout(function(){
-    if(form.style.display !== 'none'){
-      note.textContent = 'Something went wrong. Please try again.';
-      note.style.color = '#d4500a';
-      form.style.opacity='1';
-      form.style.pointerEvents='auto';
-    }
-  }, 8000);
-  form.submit();
-  return false;
-}
-</script>
+
 
 <footer>
   <div class="footer-links">
@@ -703,5 +669,28 @@ function newsletterSubmit(e){
 <script>
 (function(){var b=document.getElementById('btt');if(!b)return;window.addEventListener('scroll',function(){if(window.scrollY>600){b.style.opacity='1';b.style.transform='translateY(0)'}else{b.style.opacity='0';b.style.transform='translateY(10px)'}});b.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'})})})();
 </script>
+
+<script src="/brevo-subscribe.js"></script>
+<script>
+(function(){
+  var form = document.getElementById('newsletter-form');
+  if (!form) return;
+  form.addEventListener('submit', function(e) {
+    e.preventDefault();
+    var email = form.querySelector('input[name="EMAIL"]').value;
+    var note = document.getElementById('newsletter-note');
+    if (!email || !email.includes('@')) {
+      if (note) { note.textContent = 'Please enter a valid email address.'; note.style.color = '#d4500a'; }
+      return;
+    }
+    if (window.brevoSubscribe) {
+      window.brevoSubscribe(email, form);
+    } else {
+      if (note) { note.textContent = 'Service unavailable. Try again later.'; note.style.color = '#e53e3e'; }
+    }
+  });
+})();
+</script>
+
 </body>
 </html>

@@ -304,7 +304,7 @@ html,body{overflow-x:hidden;width:100%;max-width:100vw}body{word-break:break-wor
 </ul></div><div class="cons"><h4>Cons</h4><ul>
 <li>Pricing can rise quickly as you add team members</li>
 <li>Some advanced features only unlock on higher-tier plans</li>
-<li>Works best when you have a clear process — it is not a magic wand for messy workflows</li>
+<li>Works best when you have a clear process - it is not a magic wand for messy workflows</li>
 </ul></div></div>
 
 <h2>How Anara Compares</h2>
@@ -316,7 +316,7 @@ html,body{overflow-x:hidden;width:100%;max-width:100vw}body{word-break:break-wor
 <p>Our advice: run the same task through two different tools, compare the output, and pick whichever one you would actually use every day. The best tool for your team is the one that sticks.</p>
 
 <h2>Who Should Use Anara?</h2>
-<p>Anara is best for founders, freelancers, and small teams that already know which task they want to improve. The tools in this category do not fix a messy process — you need a clear owner and a defined workflow first. Once that is in place, Anara can make the work faster and easier to repeat every day.</p>
+<p>Anara is best for founders, freelancers, and small teams that already know which task they want to improve. The tools in this category do not fix a messy process - you need a clear owner and a defined workflow first. Once that is in place, Anara can make the work faster and easier to repeat every day.</p>
 <p>It is also a good fit for UK businesses that want to keep costs predictable. Hiring another staff member or signing a long agency contract is expensive. A software tool at £15 to £30 a month is cheaper to test, easier to cancel, and safer for a small team that wants proof the approach works before spending more.</p>
 <p>If you are already paying for several tools, check whether Anara removes one of them or only adds another monthly bill. The best result is when it replaces a manual step or removes a separate subscription. If it only adds a small convenience, stay on the trial or starter plan until the value is clear.</p>
 
@@ -374,41 +374,7 @@ html,body{overflow-x:hidden;width:100%;max-width:100vw}body{word-break:break-wor
   <p>&copy; <script>document.write(new Date().getFullYear())</script> AI Tool Pick</p>
 </footer>
 
-<script>
-function newsletterSubmit(e){
-  e.preventDefault();
-  var form = document.getElementById('newsletter-form');
-  var email = form.querySelector('input[name="EMAIL"]').value;
-  var note = document.getElementById('newsletter-note');
-  if(!email || !email.includes('@')){
-    note.textContent = 'Please enter a valid email address.';
-    note.style.color = '#d4500a';
-    return false;
-  }
-  form.style.opacity='0.5';
-  form.style.pointerEvents='none';
-  note.textContent = 'Subscribing...';
-  note.style.color = 'var(--muted)';
-  var iframe = document.getElementById('hidden_iframe');
-  iframe.onload = function(){
-    form.style.display='none';
-    note.textContent="You're signed up. Check your inbox for confirmation.";
-    note.style.color='var(--accent)';
-    note.style.fontSize='16px';
-    note.style.fontWeight='600';
-  };
-  setTimeout(function(){
-    if(form.style.display !== 'none'){
-      note.textContent = 'Something went wrong. Please try again.';
-      note.style.color = '#d4500a';
-      form.style.opacity='1';
-      form.style.pointerEvents='auto';
-    }
-  }, 8000);
-  form.submit();
-  return false;
-}
-</script>
+
 
 <button id="btt" aria-label="Back to top" style="position:fixed;bottom:24px;right:24px;width:40px;height:40px;border-radius:50%;background:var(--ink);color:var(--paper);border:none;cursor:pointer;opacity:0;transform:translateY(10px);transition:opacity .25s,transform .25s;z-index:99;font-size:16px;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 8px rgba(0,0,0,.15)">&#8593;</button>
 <script>
@@ -416,5 +382,28 @@ function newsletterSubmit(e){
 </script>
 <button id="btt" aria-label="Back to top" style="position:fixed;bottom:24px;right:24px;width:40px;height:40px;border-radius:50%;background:var(--ink);color:var(--paper);border:none;cursor:pointer;opacity:0;transform:translateY(10px);transition:opacity .25s,transform .25s;z-index:99;font-size:16px;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 8px rgba(0,0,0,.15)">&#8593;</button>
 <script>(function(){var b=document.getElementById('btt');if(!b)return;window.addEventListener('scroll',function(){if(window.scrollY>600){b.style.opacity='1';b.style.transform='translateY(0)'}else{b.style.opacity='0';b.style.transform='translateY(10px)'}});b.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'})})})();</script>
+
+<script src="/brevo-subscribe.js"></script>
+<script>
+(function(){
+  var form = document.getElementById('newsletter-form');
+  if (!form) return;
+  form.addEventListener('submit', function(e) {
+    e.preventDefault();
+    var email = form.querySelector('input[name="EMAIL"]').value;
+    var note = document.getElementById('newsletter-note');
+    if (!email || !email.includes('@')) {
+      if (note) { note.textContent = 'Please enter a valid email address.'; note.style.color = '#d4500a'; }
+      return;
+    }
+    if (window.brevoSubscribe) {
+      window.brevoSubscribe(email, form);
+    } else {
+      if (note) { note.textContent = 'Service unavailable. Try again later.'; note.style.color = '#e53e3e'; }
+    }
+  });
+})();
+</script>
+
 </body>
 </html>

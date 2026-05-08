@@ -209,7 +209,7 @@ function siteSearch(query) {
         <a href="/blog.html" class="btn-primary">Browse all reviews →</a>
         <a href="#categories" class="btn-secondary">Browse by category</a>
       </div><div style="margin-top:16px;max-width:400px;">
-      <form onsubmit="event.preventDefault();siteSearch(this.query.value);" style="display:flex;gap:8px;">
+      <form  style="display:flex;gap:8px;">
         <input type="text" name="query" placeholder="Search reviews..." style="flex:1;padding:10px 14px;border:1px solid var(--border);border-radius:8px;font-family:inherit;font-size:13px;background:var(--surface);">
         <button type="submit" style="background:var(--ink);color:var(--paper);border:none;border-radius:8px;padding:0 16px;font-weight:600;font-size:13px;cursor:pointer;">Search</button>
       </form>
@@ -400,14 +400,14 @@ function siteSearch(query) {
     <h2 class="newsletter-label">Stay informed</h2>
     <h3 class="newsletter-title">Weekly AI tool picks for UK businesses</h3>
     <div class="newsletter-desc">One email a week. The best new AI tools, honest reviews, and money-saving tips - curated for UK small businesses.</div>
-    <form class="newsletter-form" id="newsletter-form" method="POST" action="https://3cc19776.sibforms.com/serve/MUIFAOofIPWDC7p6ZNYA_lBDbGD7TXnmtRi6_C60iaM1Rq8RUYlQVOcm4IaKwQvoMYP4HPqTBS3XtCcKmUsVbjSjgtXbfWDuMKJydKD8v8U124pilWNiidY07SFTq4kT6HHD4-f2YmSBHnNWoLN2HmSTOPQiSDrfWBajIwUNN9KqvoQIGq5N6YFV3C1q1NwWIGb1DSRzsjTqNwOYvg==" target="hidden_iframe" onsubmit="newsletterSubmit(event)">
+    <form class="newsletter-form" id="newsletter-form" method="POST"  >
       <input type="email" name="EMAIL" class="newsletter-input" placeholder="your@email.co.uk" required>
       <button type="submit" class="newsletter-btn">Subscribe</button>
       <input type="text" name="email_address_check" value="" style="display:none;">
       <input type="hidden" name="locale" value="en">
     </form>
     <div class="newsletter-note" id="newsletter-note">No spam. We'll email new posts and useful picks straight to your inbox.</div>
-    <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"></iframe>
+    
   </div>
 </section>
 
@@ -433,44 +433,33 @@ document.querySelectorAll('.tab-btn').forEach(btn => {
 });
 </script>
 
-<script>
-function newsletterSubmit(e){
-  e.preventDefault();
-  var form = document.getElementById('newsletter-form');
-  var email = form.querySelector('input[name="EMAIL"]').value;
-  var note = document.getElementById('newsletter-note');
-  if(!email || !email.includes('@')){
-    note.textContent = 'Please enter a valid email address.';
-    note.style.color = '#d4500a';
-    return false;
-  }
-  form.style.opacity='0.5';
-  form.style.pointerEvents='none';
-  note.textContent = 'Subscribing...';
-  note.style.color = 'rgba(250,250,247,.55)';
-  var iframe = document.getElementById('hidden_iframe');
-  iframe.onload = function(){
-    form.style.display='none';
-    note.textContent="You're signed up. Check your inbox for confirmation.";
-    note.style.color='var(--accent)';
-    note.style.fontSize='16px';
-    note.style.fontWeight='600';
-  };
-  setTimeout(function(){
-    if(form.style.display !== 'none'){
-      note.textContent = 'Something went wrong. Please try again.';
-      note.style.color = '#d4500a';
-      form.style.opacity='1';
-      form.style.pointerEvents='auto';
-    }
-  }, 8000);
-  form.submit();
-  return false;
-}
-</script>
+
 
 <script>
 document.getElementById('article-count').textContent='20+';
+</script>
+
+
+<script src="/brevo-subscribe.js"></script>
+<script>
+(function(){
+  var form = document.getElementById('newsletter-form');
+  if (!form) return;
+  form.addEventListener('submit', function(e) {
+    e.preventDefault();
+    var email = form.querySelector('input[name="EMAIL"]').value;
+    var note = document.getElementById('newsletter-note');
+    if (!email || !email.includes('@')) {
+      if (note) { note.textContent = 'Please enter a valid email address.'; note.style.color = '#d4500a'; }
+      return;
+    }
+    if (window.brevoSubscribe) {
+      window.brevoSubscribe(email, form);
+    } else {
+      if (note) { note.textContent = 'Service unavailable. Try again later.'; note.style.color = '#e53e3e'; }
+    }
+  });
+})();
 </script>
 
 </body>

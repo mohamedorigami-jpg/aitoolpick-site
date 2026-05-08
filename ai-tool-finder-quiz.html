@@ -346,20 +346,29 @@ function subscribeQuiz(e, form) {
 }
 </script>
 
+
+
+
+<script src="/brevo-subscribe.js"></script>
 <script>
-function newsletterSubmit(e){
-  // Form will submit to hidden_iframe in background
-  document.getElementById('newsletter-form').style.opacity='0.5';
-  document.getElementById('newsletter-form').style.pointerEvents='none';
-  setTimeout(function(){
-    document.getElementById('newsletter-form').style.display='none';
-    var note=document.getElementById('newsletter-note');
-    note.textContent="You're signed up. We'll email new posts and useful picks straight to your inbox.";
-    note.style.color='var(--accent)';
-    note.style.fontSize='16px';
-    note.style.fontWeight='600';
-  }, 500);
-}
+(function(){
+  var form = document.getElementById('newsletter-form');
+  if (!form) return;
+  form.addEventListener('submit', function(e) {
+    e.preventDefault();
+    var email = form.querySelector('input[name="EMAIL"]').value;
+    var note = document.getElementById('newsletter-note');
+    if (!email || !email.includes('@')) {
+      if (note) { note.textContent = 'Please enter a valid email address.'; note.style.color = '#d4500a'; }
+      return;
+    }
+    if (window.brevoSubscribe) {
+      window.brevoSubscribe(email, form);
+    } else {
+      if (note) { note.textContent = 'Service unavailable. Try again later.'; note.style.color = '#e53e3e'; }
+    }
+  });
+})();
 </script>
 
 </body>

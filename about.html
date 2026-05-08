@@ -127,6 +127,20 @@ html,body{overflow-x:hidden;width:100%;max-width:100vw}body{word-break:break-wor
   <h2>Get in touch</h2>
   <p>Have a question, suggestion, or partnership enquiry? Email us at <a href="mailto:outreach@aitoolpick.co.uk">outreach@aitoolpick.co.uk</a>. We typically respond within 24-48 hours.</p>
 </div>
+
+<section class="newsletter-section" id="newsletter">
+  <div class="newsletter-inner">
+    <h2 class="newsletter-label">Stay informed</h2>
+    <h3 class="newsletter-title">Weekly AI tool picks for UK businesses</h3>
+    <div class="newsletter-desc">One email a week. The best new AI tools, honest reviews, and money-saving tips &mdash; curated for UK small businesses.</div>
+    <form class="newsletter-form" id="newsletter-form">
+      <input type="email" name="EMAIL" class="newsletter-input" placeholder="your@email.co.uk" required>
+      <button type="submit" class="newsletter-btn">Subscribe</button>
+    </form>
+    <div class="newsletter-note" id="newsletter-note">No spam. We'll email new posts and useful picks straight to your inbox.</div>
+  </div>
+</section>
+
 <footer>
   <div class="footer-links">
     <a href="/blog.html">Reviews</a>
@@ -137,6 +151,29 @@ html,body{overflow-x:hidden;width:100%;max-width:100vw}body{word-break:break-wor
   </div>
   <p>&copy; <script>document.write(new Date().getFullYear())</script> AI Tool Pick</p>
 </footer>
+
+
+<script src="/brevo-subscribe.js"></script>
+<script>
+(function(){
+  var form = document.getElementById('newsletter-form');
+  if (!form) return;
+  form.addEventListener('submit', function(e) {
+    e.preventDefault();
+    var email = form.querySelector('input[name="EMAIL"]').value;
+    var note = document.getElementById('newsletter-note');
+    if (!email || !email.includes('@')) {
+      if (note) { note.textContent = 'Please enter a valid email address.'; note.style.color = '#d4500a'; }
+      return;
+    }
+    if (window.brevoSubscribe) {
+      window.brevoSubscribe(email, form);
+    } else {
+      if (note) { note.textContent = 'Service unavailable. Try again later.'; note.style.color = '#e53e3e'; }
+    }
+  });
+})();
+</script>
 
 </body>
 </html>
