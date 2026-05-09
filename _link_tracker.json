@@ -11,7 +11,8 @@
     "Supercut",
     "Scalenut",
     "Intellijend",
-    "GetViktor"
+    "GetViktor",
+    "Galaxy.ai"
   ],
   "published_articles": [
     {
@@ -49,6 +50,12 @@
       "slug": "getviktor-review-uk-2026",
       "file": "getviktor-review-uk-2026.html",
       "published_at": "2026-05-10T16:43:18.000000"
+    },
+    {
+      "tool": "Galaxy.ai",
+      "slug": "galaxy-ai-review-uk-2026",
+      "file": "galaxy-ai-review-uk-2026.html",
+      "published_at": "2026-05-09T17:03:57.311241"
     }
   ]
 }
