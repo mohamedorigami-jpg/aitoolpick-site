@@ -145,7 +145,7 @@ nav{position:sticky;top:0;z-index:100;background:rgba(250,250,247,0.98);backdrop
   .nav-links.open{display:flex;flex-direction:column}
   .hamburger{display:flex}
 }
-.disclosure{margin-top:58px;background:rgba(212,80,10,0.06);border-bottom:1px solid rgba(212,80,10,0.15);padding:10px clamp(16px,4vw,48px);font-size:12px;color:var(--muted);text-align:center}
+.disclosure{background:rgba(212,80,10,0.06);border-bottom:1px solid rgba(212,80,10,0.15);padding:10px clamp(16px,4vw,48px);font-size:12px;color:var(--muted);text-align:center}
 .disclosure a{color:var(--accent)}
 .article-layout{max-width:1100px;margin:0 auto;padding:0 clamp(16px,4vw,48px);display:grid;grid-template-columns:1fr 280px;gap:48px;align-items:start}
 .article-main{padding:clamp(32px,5vw,56px) 0}
@@ -193,11 +193,12 @@ p{font-size:15px;color:var(--ink);margin-bottom:14px;font-weight:300}
 .verdict-label{font-size:10px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);margin-bottom:8px}
 .verdict-box h3{font-family:'Playfair Display',serif;font-size:20px;font-weight:700;color:var(--ink);margin:0 0 12px}
 .verdict-box p{color:var(--ink);font-weight:300;line-height:1.6}
-.affiliate-box{background:var(--cream);border:1px solid var(--border);border-radius:8px;padding:16px 20px;margin:24px 0}
-.affiliate-box h4{font-family:'Playfair Display',serif;font-size:14px;font-weight:700;color:var(--ink);margin-bottom:4px;letter-spacing:-.3px}
-.affiliate-box p{font-size:13px;color:var(--muted);margin-bottom:12px;font-weight:400}
-.affiliate-box .cta-button{display:inline-block;background:var(--accent);color:#fff!important;padding:7px 16px;border-radius:6px;text-decoration:none;font-weight:500;font-size:12px;transition:background .15s}
+.affiliate-box{padding:0;margin:14px 0 4px}
+.affiliate-box h4{font-family:'Playfair Display',serif;font-size:15px;font-weight:700;color:var(--ink);margin-bottom:4px;letter-spacing:-.3px}
+.affiliate-box p{font-size:13px;color:var(--muted);margin-bottom:6px;font-weight:400}
+.affiliate-box .cta-button{display:inline-flex;align-items:center;gap:4px;background:var(--accent);color:#fff!important;padding:5px 12px;border-radius:6px;text-decoration:none;font-weight:500;font-size:11px;letter-spacing:.01em;transition:background .2s}
 .affiliate-box .cta-button:hover{background:#b83f08}
+.affiliate-box .cta-button::after{content:'→';font-size:12px;line-height:1}
 
 
 footer{background:var(--ink);padding:24px clamp(16px,4vw,48px);margin-top:48px;text-align:center;font-size:11px;color:rgba(250,250,247,.4)}footer a{color:rgba(250,250,247,.45);text-decoration:none}footer a:hover{color:var(--accent)}.footer-links{display:flex;flex-wrap:wrap;justify-content:center;gap:4px 14px;margin-bottom:6px}
@@ -206,15 +207,14 @@ footer{background:var(--ink);padding:24px clamp(16px,4vw,48px);margin-top:48px;t
 
 html,body{overflow-x:hidden;width:100%;max-width:100vw}body{word-break:break-word;overflow-wrap:break-word}table th,table td{word-break:normal;overflow-wrap:normal}table th,.price-table th,.price-table td,.comparison-table th{white-space:nowrap}img,video,iframe{max-width:100%;height:auto}@media(max-width:768px){table th,table td{white-space:nowrap}.article-layout{grid-template-columns:1fr;gap:24px}.article-sidebar{display:none}.article-main{min-width:0}.pros-cons{grid-template-columns:1fr}.score-overview{grid-template-columns:1fr;gap:16px;padding:20px}.score-big{font-size:60px}.score-row-label{width:auto;min-width:80px}.discount-box{flex-direction:column;text-align:center;gap:8px;align-items:stretch}.article-meta{flex-wrap:wrap;gap:8px}.nav-inner{flex-wrap:wrap;height:auto;min-height:56px}.vs-panel{grid-template-columns:1fr;text-align:center;gap:16px}.vs-side:first-child,.vs-side:last-child{text-align:center}.vs-badge{display:none}.tool-card-header{flex-direction:column}.comparison-table,table,.price-table{display:block;overflow-x:auto;-webkit-overflow-scrolling:touch;max-width:100%}h1,h2,h3,h4{word-break:break-word;overflow-wrap:break-word}pre,code{white-space:pre-wrap;word-break:break-word}.article-intro,p,li{overflow-wrap:break-word;word-break:break-word}}
 
-.related-section{background:var(--surface);border-top:2px solid var(--accent);padding:32px clamp(16px,4vw,48px);margin-top:48px}
-.related-section h3{font-family:'Playfair Display',serif;font-size:20px;font-weight:700;color:var(--ink);margin-bottom:20px;letter-spacing:-0.5px}
-.related-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:10px}
-.related-card{display:block;background:rgba(212,80,10,0.78);color:white!important;padding:12px 18px;border-radius:8px;text-decoration:none;font-size:13px;font-weight:500;line-height:1.3;transition:background .15s}
-.related-card:hover{background:rgba(212,80,10,0.92)}
-.related-card-tag{display:block;font-size:9px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.7);margin-bottom:1px}
-.related-card-title{color:white;font-family:inherit;font-size:13px;font-weight:500;line-height:1.3}
-.related-card-desc{display:none}
-.related-card-link{display:none}
+.related-section{padding:4px 0 0;margin-top:0;border-top:1px solid var(--border)}
+.related-section h3{font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:10px}
+.related-grid{display:flex;flex-direction:column;gap:6px}
+.related-card{display:flex;align-items:center;gap:8px;padding:8px 12px;background:var(--cream);border-radius:6px;text-decoration:none;transition:background .15s}
+.related-card:hover{background:var(--border)}
+.related-card-tag{font-size:9px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);flex-shrink:0}
+.related-card-title{font-size:13px;color:var(--ink);font-weight:500;line-height:1.3}
+.related-card-desc,.related-card-link{display:none}
 
 </style>
 
@@ -394,7 +394,7 @@ The value proposition is particularly strong given the quality of the free tier.
 
     <section class="related-section">
       <div style="max-width:1100px;margin:0 auto">
-        <h3>Related Articles</h3>
+        <h3>More from AI Tool Pick</h3>
         <div class="related-grid">
           <a href="/best-ai-tools-for-uk-startups-2026.html" class="related-card"><div class="related-card-tag">Startups</div><div class="related-card-title">Best AI Tools for UK Startups</div><div class="related-card-desc">Founder stack for small teams</div><div class="related-card-link">Read review &rarr;</div></a>
           <a href="/best-ai-writing-tools-uk.html" class="related-card"><div class="related-card-tag">AI Writing</div><div class="related-card-title">Best AI Writing Tools UK</div><div class="related-card-desc">Jasper, Copy.ai, Claude and more</div><div class="related-card-link">Read review &rarr;</div></a>
