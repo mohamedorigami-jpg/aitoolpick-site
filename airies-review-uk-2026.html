@@ -72,8 +72,10 @@ html{scroll-behavior:smooth}
 .key-box:hover{transform:translateY(-1px);box-shadow:0 4px 12px rgba(0,0,0,.06)}
 .article-main a{color:var(--accent);text-decoration:none;border-bottom:1px solid rgba(212,80,10,.25);transition:border-color .15s}
 .article-main a:hover{border-bottom-color:var(--accent)}
-.affiliate-box{transition:transform .15s,box-shadow .15s}
-.affiliate-box:hover{transform:translateY(-1px);box-shadow:0 4px 16px rgba(212,80,10,.08)}
+.affiliate-box{background:var(--cream);border:1px solid var(--border);border-left:4px solid var(--accent);border-radius:0 12px 12px 0;padding:28px 32px;margin:28px 0;box-shadow:0 2px 8px rgba(0,0,0,.04);transition:transform .2s,box-shadow .2s}
+.affiliate-box:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(212,80,10,.1)}
+.affiliate-box h4{font-family:'Playfair Display',serif;font-size:18px;font-weight:700;letter-spacing:-.3px;text-transform:none;color:var(--ink);margin-bottom:8px}
+.affiliate-box p{font-size:14px;margin-bottom:16px;color:var(--muted);font-weight:400}
 html{overflow-x:hidden}
 *{box-sizing:border-box;margin:0;padding:0}
 *,*::before,*::after{transition:background .2s,color .15s,border-color .2s,box-shadow .2s}
@@ -149,8 +151,8 @@ p{font-size:15px;color:var(--ink);margin-bottom:14px;font-weight:300}
 .discount-box{background:rgba(26,107,58,.06);border:1px solid rgba(26,107,58,.2);border-radius:10px;padding:16px 20px;margin:24px 0;display:flex;align-items:center;gap:16px}
 .discount-code{font-family:'DM Mono',monospace;font-size:18px;font-weight:500;color:var(--accent2);background:rgba(26,107,58,.1);padding:6px 14px;border-radius:6px;letter-spacing:.05em}
 .discount-text{font-size:13px;color:var(--ink);font-weight:300}
-.article-main .cta-btn{display:inline-flex;align-items:center;gap:8px;background:var(--accent);color:var(--paper);text-decoration:none;font-size:13px;font-weight:600;padding:11px 22px;border-radius:8px;margin-top:16px;transition:background .2s}
-.article-main .cta-btn:hover{background:#bf4208}
+.article-main .cta-btn{display:inline-flex;align-items:center;gap:8px;background:var(--accent);color:var(--paper);text-decoration:none;font-size:13px;font-weight:600;padding:11px 22px;border-radius:8px;margin-top:16px;transition:all .2s ease}
+.article-main .cta-btn:hover{background:#b83f08;transform:translateY(-2px);box-shadow:0 4px 12px rgba(212,80,10,.2)}
 .cta-note{font-size:11px;color:var(--muted);margin-top:6px}
 .sidebar-card{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:20px;margin-bottom:20px}
 .sidebar-title{font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:14px}
@@ -258,6 +260,9 @@ html,body{overflow-x:hidden;width:100%;max-width:100vw}body{word-break:break-wor
 }
 </script>
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta property="article:tag" content="AI Reviews">
+<meta property="article:tag" content="UK Business">
+<meta property="article:tag" content="Small Business">
 </head>
 <body>
 
@@ -383,8 +388,12 @@ html,body{overflow-x:hidden;width:100%;max-width:100vw}body{word-break:break-wor
     <div class="verdict-text">Airies is one of the better-structured AI learning platforms available in 2026. The free plan is genuinely useful, the curriculum is practical rather than academic, and the university partnerships give it credibility that most new EdTech platforms lack. At around £22/month for full access, it delivers solid value for professionals who want to build real AI skills - not just watch videos.</div>
   </div>
 
-  <a href="https://www.awin1.com/cread.php?awinmid=125330&awinaffid=2814806&ued=https%3A%2F%2Fairies.app" class="cta-btn" target="_blank" rel="noopener nofollow sponsored">Try Airies free (5 courses, no card) →</a>
-  <div class="cta-note">Affiliate link - we may earn a commission at no extra cost to you. Use code AIRIES12AF for 10% off any paid plan.</div>
+    <div class="affiliate-box">
+    <h4>Try Airies Free</h4>
+    <p>Start with 5 free courses, no card required, and build real AI skills.</p>
+    <a href="https://www.awin1.com/cread.php?awinmid=125330&awinaffid=2814806&ued=https%3A%2F%2Fairies.app" class="cta-btn" target="_blank" rel="noopener nofollow sponsored">Try Airies free (5 courses, no card) →</a>
+    <div class="cta-note">Affiliate link - we may earn a commission at no extra cost to you. Use code AIRIES12AF for 10% off any paid plan.</div>
+  </div>
 
 </article>
 
