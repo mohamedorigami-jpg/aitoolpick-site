@@ -10,7 +10,8 @@
     "CodeRabbit",
     "Supercut",
     "Scalenut",
-    "Intellijend"
+    "Intellijend",
+    "GetViktor"
   ],
   "published_articles": [
     {
@@ -42,6 +43,12 @@
       "slug": "intellijend-review-uk-2026",
       "file": "intellijend-review-uk-2026.html",
       "published_at": "2026-05-09T07:04:05.091955"
+    },
+    {
+      "tool": "GetViktor",
+      "slug": "getviktor-review-uk-2026",
+      "file": "getviktor-review-uk-2026.html",
+      "published_at": "2026-05-10T16:43:18.000000"
     }
   ]
 }
