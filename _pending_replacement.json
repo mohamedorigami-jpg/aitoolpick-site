@@ -1,14 +1,14 @@
 {
   "status": "prepared_needs_image",
   "mode": "additive_article",
-  "tool": "Firecrawl",
-  "affiliate_url": "firecrawl.link/mo",
-  "category": "Developer Tools",
-  "slug": "firecrawl-review-uk-2026",
-  "new_file": "firecrawl-review-uk-2026.html",
-  "new_path": "/Users/openclaw/Documents/hermes/aitoolpick-site/firecrawl-review-uk-2026.html",
-  "image_filename": "firecrawl-hero.png",
-  "image_path": "/Users/openclaw/Documents/hermes/aitoolpick-site/images/firecrawl-hero.png",
-  "image_prompt": "Create a premium editorial hero image for AI Tool Pick's review of Firecrawl. The image must visibly include the actual product name and actual tool name 'Firecrawl' on a laptop or app interface. Make it recognisably about this exact product, not a generic AI dashboard. Show the product-specific concept: web scraping API converting websites into clean markdown. Use the site's premium dark, cream and orange visual style, realistic SaaS dashboard details, clean composition, no generic abstract blobs, no random brand names.",
-  "prepared_at": "2026-05-08T07:00:48.605778"
+  "tool": "Intellijend",
+  "affiliate_url": "go.intellijend.com/mo",
+  "category": "Analytics",
+  "slug": "intellijend-review-uk-2026",
+  "new_file": "intellijend-review-uk-2026.html",
+  "new_path": "/Users/openclaw/Documents/hermes/aitoolpick-site/intellijend-review-uk-2026.html",
+  "image_filename": "intellijend-hero.png",
+  "image_path": "/Users/openclaw/Documents/hermes/aitoolpick-site/images/intellijend-hero.png",
+  "image_prompt": "Create a premium editorial hero image for AI Tool Pick's review of Intellijend. The image must visibly include the actual product name and actual tool name 'Intellijend' on a laptop or app interface. Make it recognisably about this exact product, not a generic AI dashboard. Show the product-specific concept: AI business intelligence and analytics dashboard. Use the site's premium dark, cream and orange visual style, realistic SaaS dashboard details, clean composition, no generic abstract blobs, no random brand names.",
+  "prepared_at": "2026-05-09T07:00:56.554803"
 }

@@ -3,7 +3,14 @@
     "Chatbase",
     "Fillout",
     "Testimonial",
-    "Firecrawl"
+    "Firecrawl",
+    "Riverflow",
+    "Kite",
+    "Replo",
+    "CodeRabbit",
+    "Supercut",
+    "Scalenut",
+    "Intellijend"
   ],
   "published_articles": [
     {
@@ -29,6 +36,12 @@
       "slug": "firecrawl-review-uk-2026",
       "file": "firecrawl-review-uk-2026.html",
       "published_at": "2026-05-08T07:04:02.945075"
+    },
+    {
+      "tool": "Intellijend",
+      "slug": "intellijend-review-uk-2026",
+      "file": "intellijend-review-uk-2026.html",
+      "published_at": "2026-05-09T07:04:05.091955"
     }
   ]
 }
