@@ -1,14 +1,14 @@
 {
   "status": "prepared_needs_image",
   "mode": "additive_article",
-  "tool": "Galaxy.ai",
-  "affiliate_url": "try.galaxy.ai/mo-acm1",
-  "category": "AI Platform",
-  "slug": "galaxy-ai-review-uk-2026",
-  "new_file": "galaxy-ai-review-uk-2026.html",
-  "new_path": "/Users/openclaw/Documents/hermes/aitoolpick-site/galaxy-ai-review-uk-2026.html",
-  "image_filename": "galaxy-ai-hero.png",
-  "image_path": "/Users/openclaw/Documents/hermes/aitoolpick-site/images/galaxy-ai-hero.png",
-  "image_prompt": "Create a premium editorial hero image for AI Tool Pick's review of Galaxy.ai. The image must visibly include the actual product name and actual tool name 'Galaxy.ai' on a laptop or app interface. Make it recognisably about this exact product, not a generic AI dashboard. Show the product-specific concept: all-in-one AI tools platform and model workspace. Use the site's premium dark, cream and orange visual style, realistic SaaS dashboard details, clean composition, no generic abstract blobs, no random brand names.",
-  "prepared_at": "2026-05-09T17:00:20.517975"
+  "tool": "Marblism",
+  "affiliate_url": "marblism.link/mo",
+  "category": "Developer Tools",
+  "slug": "marblism-review-uk-2026",
+  "new_file": "marblism-review-uk-2026.html",
+  "new_path": "/Users/openclaw/Documents/hermes/aitoolpick-site/marblism-review-uk-2026.html",
+  "image_filename": "marblism-hero.png",
+  "image_path": "/Users/openclaw/Documents/hermes/aitoolpick-site/images/marblism-hero.png",
+  "image_prompt": "Create a premium editorial hero image for AI Tool Pick's review of Marblism. The image must visibly include the actual product name and actual tool name 'Marblism' on a laptop or app interface. Make it recognisably about this exact product, not a generic AI dashboard. Show the product-specific concept: AI app builder generating full-stack web applications. Use the site's premium dark, cream and orange visual style, realistic SaaS dashboard details, clean composition, no generic abstract blobs, no random brand names.",
+  "prepared_at": "2026-05-12T11:05:20.011547"
 }

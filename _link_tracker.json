@@ -12,7 +12,8 @@
     "Scalenut",
     "Intellijend",
     "GetViktor",
-    "Galaxy.ai"
+    "Galaxy.ai",
+    "Marblism"
   ],
   "published_articles": [
     {
@@ -56,6 +57,12 @@
       "slug": "galaxy-ai-review-uk-2026",
       "file": "galaxy-ai-review-uk-2026.html",
       "published_at": "2026-05-09T17:03:57.311241"
+    },
+    {
+      "tool": "Marblism",
+      "slug": "marblism-review-uk-2026",
+      "file": "marblism-review-uk-2026.html",
+      "published_at": "2026-05-12T11:07:07.727733"
     }
   ]
 }
